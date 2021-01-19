@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<!-- NormalizeCSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		/>
+		<!-- Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<!-- Slick CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+		/>
+		<!-- Styles -->
+		<link rel="stylesheet" href="./css/cappella.css" />
+		<!-- Slick JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+		<!-- Map JS -->
+		<script defer src="./scripts/map.js"></script>
+		<!-- Scripts -->
+		<script defer src="./scripts/acappella.js" type="module"></script>
+		<title>A Cappella House</title>
+	</head>
+	<body>
+		<header
+			id="header"
+			class="header"
+			style="background-image: url(./images/homepage/cappella-bg.png)"
+		>
+			<nav class="header-navbar navbar" id="navbar">
+				<div class="navbar__container container">
+					<div class="navbar__info">
+						<a href="#" class="navbar__logo">
+							<img src="./svg/cappella-logo.svg" alt="A Cappella Logo" />
+						</a>
+						<div class="navbar__langs">
+							<a href="#" class="navbar__speech active">RU</a>
+							<a href="#" class="navbar__speech">HE</a>
+						</div>
+					</div>
+					<!-- /.navbar__info -->
+					<div class="navbar__mask"></div>
+					<!-- /.navbar__mask -->
+					<div class="navbar__wrapper">
+						<ul class="navbar__list">
+							<li class="navbar__item">
+								<a href="#about" class="navbar__link">О нас</a>
+							</li>
+							<li class="navbar__item">
+								<a href="#gallery" class="navbar__link">Галерея</a>
+							</li>
+							<li class="navbar__item drop-list">
+								<span class="navbar__link">Комнаты</span>
+								<ul class="dropdown">
+									<li class="dropdown__item">
+										<a href="#rooms-brown" class="dropdown__link">Brown</a>
+									</li>
+									<li class="dropdown__item">
+										<a href="#rooms-odri" class="dropdown__link">Odri</a>
+									</li>
+									<li class="dropdown__item">
+										<a href="#rooms-classic" class="dropdown__link">Classic</a>
+									</li>
+									<li class="dropdown__item">
+										<a href="#rooms-retro" class="dropdown__link">Retro</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navbar__item">
+								<a href="#contacts" class="navbar__link">Контакты</a>
+							</li>
+						</ul>
+
+						<div class="navbar__action">
+							<div class="navbar__social">
+								<a href="#" class="navbar__social-link">
+									<svg class="icon" viewBox="0 0 20 20">
+										<path
+											d="M10.0025 0H9.9975C4.48375 0 0 4.485 0 10C0 12.1875 0.705 14.215 1.90375 15.8612L0.6575 19.5763L4.50125 18.3475C6.0825 19.395 7.96875 20 10.0025 20C15.5162 20 20 15.5138 20 10C20 4.48625 15.5162 0 10.0025 0ZM15.8212 14.1213C15.58 14.8025 14.6225 15.3675 13.8587 15.5325C13.3363 15.6437 12.6537 15.7325 10.3562 14.78C7.4175 13.5625 5.525 10.5763 5.3775 10.3825C5.23625 10.1887 4.19 8.80125 4.19 7.36625C4.19 5.93125 4.91875 5.2325 5.2125 4.9325C5.45375 4.68625 5.8525 4.57375 6.235 4.57375C6.35875 4.57375 6.47 4.58 6.57 4.585C6.86375 4.5975 7.01125 4.615 7.205 5.07875C7.44625 5.66 8.03375 7.095 8.10375 7.2425C8.175 7.39 8.24625 7.59 8.14625 7.78375C8.0525 7.98375 7.97 8.0725 7.8225 8.2425C7.675 8.4125 7.535 8.5425 7.3875 8.725C7.2525 8.88375 7.1 9.05375 7.27 9.3475C7.44 9.635 8.0275 10.5937 8.8925 11.3637C10.0087 12.3575 10.9137 12.675 11.2375 12.81C11.4787 12.91 11.7662 12.8863 11.9425 12.6988C12.1663 12.4575 12.4425 12.0575 12.7238 11.6638C12.9237 11.3813 13.1763 11.3462 13.4412 11.4462C13.7113 11.54 15.14 12.2462 15.4338 12.3925C15.7275 12.54 15.9212 12.61 15.9925 12.7338C16.0625 12.8575 16.0625 13.4388 15.8212 14.1213Z"
+										/>
+									</svg>
+								</a>
+								<a href="#" class="navbar__social-link">
+									<svg class="icon" viewBox="0 0 11 20">
+										<path
+											d="M8.33027 3.32083H10.1561V0.140833C9.84111 0.0975 8.75777 0 7.49611 0C4.86361 0 3.06027 1.65583 3.06027 4.69917V7.5H0.155273V11.055H3.06027V20H6.62194V11.0558H9.40944L9.85194 7.50083H6.62111V5.05167C6.62194 4.02417 6.89861 3.32083 8.33027 3.32083Z"
+										/>
+									</svg>
+								</a>
+								<a href="#" class="navbar__social-link">
+									<svg class="icon" viewBox="0 0 20 20">
+										<path
+											d="M14.5862 0H5.41381C2.42858 0 0 2.42858 0 5.41381V14.5863C0 17.5714 2.42858 20 5.41381 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41381C20 2.42858 17.5714 0 14.5862 0ZM9.99998 15.4686C6.98454 15.4686 4.53139 13.0154 4.53139 9.99998C4.53139 6.98454 6.98454 4.53139 9.99998 4.53139C13.0154 4.53139 15.4686 6.98454 15.4686 9.99998C15.4686 13.0154 13.0154 15.4686 9.99998 15.4686ZM15.5993 5.82106C14.7082 5.82106 13.9834 5.09627 13.9834 4.20516C13.9834 3.31405 14.7082 2.58911 15.5993 2.58911C16.4904 2.58911 17.2154 3.31405 17.2154 4.20516C17.2154 5.09627 16.4904 5.82106 15.5993 5.82106Z"
+										/>
+										<path
+											d="M9.99998 5.70388C7.63121 5.70388 5.70388 7.63106 5.70388 9.99998C5.70388 12.3688 7.63121 14.2961 9.99998 14.2961C12.3689 14.2961 14.2961 12.3688 14.2961 9.99998C14.2961 7.63106 12.3689 5.70388 9.99998 5.70388Z"
+										/>
+										<path
+											d="M15.5993 3.76174C15.3549 3.76174 15.1559 3.96072 15.1559 4.20516C15.1559 4.44961 15.3549 4.64858 15.5993 4.64858C15.8439 4.64858 16.0429 4.44976 16.0429 4.20516C16.0429 3.96056 15.8439 3.76174 15.5993 3.76174Z"
+										/>
+									</svg>
+								</a>
+							</div>
+							<a href="tel:xxxxxxxxxxxx" class="navbar__tel">
+								<img
+									src="./svg/whatsapp.svg"
+									alt="whatsapp"
+									class="navbar__tel-img"
+								/>
+							</a>
+							<button class="navbar__btn btn-normal">
+								<svg viewBox="0 0 13 13" class="icon">
+									<path
+										d="M12.7817 5.81154L6.949 0.49684C6.69298 0.263526 6.30692 0.263552 6.05101 0.496815L0.218309 5.81157C0.0132296 5.99845 -0.0545125 6.28637 0.0456788 6.54508C0.145895 6.80378 0.389899 6.97093 0.667342 6.97093H1.59892V12.2959C1.59892 12.507 1.77011 12.6782 1.98123 12.6782H5.17826C5.38938 12.6782 5.56056 12.507 5.56056 12.2959V9.06273H7.43952V12.2959C7.43952 12.507 7.6107 12.6782 7.82182 12.6782H11.0187C11.2298 12.6782 11.401 12.507 11.401 12.2959V6.97093H12.3328C12.6102 6.97093 12.8542 6.80376 12.9544 6.54508C13.0545 6.28635 12.9867 5.99845 12.7817 5.81154Z"
+									/>
+									<path
+										d="M11.3013 1.08494H8.73382L11.6836 3.7671V1.46722C11.6836 1.25609 11.5124 1.08494 11.3013 1.08494Z"
+									/>
+								</svg>
+								event hall
+							</button>
+						</div>
+					</div>
+					<button class="navbar__burger" id="burgerBtn">
+						<span class="navbar__burger-line"></span>
+					</button>
+				</div>
+			</nav>
+			<!-- /.header-navbar navbar -->
+			<div class="header__content">
+				<h1 class="header__title">A Cappella House</h1>
+				<span class="header__big section__big">A</span>
+				<p class="header__text">
+					Разнообразный и богатый опыт сложившаяся структура организации
+					позволяет выполнять важные задания по разработке системы обучения
+					кадров, соответствует насущным потребностям.
+				</p>
+			</div>
+			<div class="next">
+				<a href="#about" class="next-btn">
+					<svg viewBox="0 0 160 50" class="next-bg">
+						<path
+							d="M79.9999 0C105 0 125 50 160 50H-6.10352e-05C35 50 55 0 79.9999 0Z"
+						/>
+					</svg>
+					<img
+						src="./svg/cappella/chevron-bottom.svg"
+						alt="next top"
+						class="next-icon icon"
+					/>
+				</a>
+			</div>
+		</header>
+		<!-- /.header -->
+		<main class="main">
+			<section
+				id="about"
+				class="section about"
+				style="background-image: url(./svg/cappella/about-bg.svg)"
+			>
+				<div class="container about__content">
+					<div class="about-left">
+						<div class="about__head section__head">
+							<h2 class="section__title about__title">О нас</h2>
+							<span class="about__big section__big">О</span>
+							<span class="section__line"></span>
+						</div>
+						<p class="about__text section__text">
+							Разнообразный и богатый опыт сложившаяся структура организации
+							позволяет выполнять важные задания по разработке системы обучения
+							кадров, соответствует насущным потребностям.
+						</p>
+						<div class="about__img about__img-one">
+							<img src="./images/cappella/about-img-1.png" alt="img" />
+						</div>
+					</div>
+					<div class="about-right">
+						<div class="about__img about__img-two">
+							<img src="./images/cappella/about-img-2.png" alt="img" />
+						</div>
+						<p class="section__text">
+							Разнообразный и богатый опыт сложившаяся структура организации
+							позволяет выполнять важные задания по разработке системы обучения
+							кадров, соответствует насущным потребностям.
+						</p>
+						<p class="section__text">
+							Значимость этих проблем настолько очевидна, что укрепление и
+							развитие структуры в значительной степени обуславливает создание
+							направлений прогрессивного развития.
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- /.section about -->
+			<section
+				id="gallery"
+				class="section gallery"
+				style="background-image: url(./images/homepage/home-bg.png)"
+			>
+				<div class="container gallery__content">
+					<div class="gallery__top">
+						<h2 class="section__title gallery__title">Галерея</h2>
+						<span class="section__big gallery__big">Г</span>
+						<span class="gallery__line"></span>
+						<div class="gallery__action">
+							<button class="gallery__btn gallery__prev">
+								<svg
+									class="icon"
+									viewBox="0 0 18 10"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M0.206228 5.49771C0.20644 5.49792 0.206615 5.49817 0.206861 5.49838L3.88083 9.15463C4.15607 9.42853 4.60125 9.42751 4.87522 9.15224C5.14916 8.877 5.14811 8.43182 4.87287 8.15788L2.40616 5.70313L17.2969 5.70313C17.6852 5.70313 18 5.38834 18 5C18 4.61167 17.6852 4.29688 17.2969 4.29688L2.4062 4.29688L4.87283 1.84213C5.14807 1.56819 5.14913 1.12301 4.87519 0.84777C4.60122 0.572461 4.156 0.571512 3.88079 0.84538L0.206825 4.50163C0.206615 4.50184 0.20644 4.50209 0.206192 4.5023C-0.0691857 4.77715 -0.0683063 5.22377 0.206228 5.49771Z"
+									/>
+								</svg>
+							</button>
+							<button class="gallery__btn gallery__next">
+								<svg
+									class="icon"
+									viewBox="0 0 18 10"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M17.7938 4.50229C17.7936 4.50208 17.7934 4.50184 17.7931 4.50163L14.1192 0.845375C13.8439 0.571473 13.3987 0.572492 13.1248 0.847765C12.8508 1.123 12.8519 1.56819 13.1271 1.84212L15.5938 4.29687L0.703124 4.29687C0.314788 4.29687 -6.94318e-07 4.61166 -7.62217e-07 5C-8.30116e-07 5.38833 0.314788 5.70312 0.703124 5.70312L15.5938 5.70312L13.1272 8.15787C12.8519 8.43181 12.8509 8.87699 13.1248 9.15223C13.3988 9.42754 13.844 9.42849 14.1192 9.15462L17.7932 5.49837C17.7934 5.49816 17.7936 5.49792 17.7938 5.49771C18.0692 5.22286 18.0683 4.77623 17.7938 4.50229Z"
+									/>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="gallery__wrapper">
+						<div class="gallery__slider">
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-1.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/cappella-bg.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-2.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-3.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-1.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/cappella-bg.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-2.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-3.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /.section gallery -->
+			<section class="section rooms" id="rooms">
+				<div
+					class="rooms-top"
+					style="background-image: url(./images/cappella/rooms-bg.png)"
+				>
+					<h2 class="section__title rooms__title">
+						Давайте посмотрим наши комнаты
+					</h2>
+				</div>
+				<div class="rooms__sections">
+					<div class="rooms__sections--bg">
+						<svg class="icon" viewBox="0 0 1800 52">
+							<path
+								d="M901 2C877 2 856 52 821 52H0V0H1800V52H981C946 52 926 2 901 2Z"
+							/>
+						</svg>
+						<a href="#rooms-brown" class="next">
+							<svg class="icon" viewBox="0 0 20 12">
+								<path
+									d="M10.5488 11.1729L19.7738 1.92228C20.0759 1.6192 20.0754 1.12849 19.7723 0.825918C19.4692 0.523575 18.9782 0.524357 18.6759 0.82748L9.99996 9.52745L1.32406 0.827167C1.02172 0.524082 0.531054 0.523301 0.22793 0.825605C0.0759773 0.977284 -2.52053e-08 1.17599 -3.38912e-08 1.3747C-4.25549e-08 1.57291 0.0754699 1.77084 0.226368 1.92224L9.45114 11.1729C9.59637 11.3188 9.79403 11.4008 9.99996 11.4008C10.2059 11.4008 10.4033 11.3186 10.5488 11.1729Z"
+								/>
+							</svg>
+						</a>
+					</div>
+					<div
+						id="rooms-brown"
+						class="rooms__item right"
+						style="background-image: url(./images/cappella/rooms-img-1.png)"
+					>
+						<div class="info">
+							<div class="info__block">
+								<div class="info__head section__head">
+									<h2 class="section__title info__title">Brown</h2>
+									<span class="section__big info__big">B</span>
+									<span class="info__line section__line"></span>
+								</div>
+								<p class="section__text info__text">
+									Разнообразный и богатый опыт сложившаяся структура организации
+									позволяет выполнять важные задания по разработке системы
+									обучения кадров, соответствует насущным потребностям.
+								</p>
+								<button class="btn-border info__btn">
+									<span class="btn-text">Больше</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div
+						id="rooms-odri"
+						class="rooms__item left"
+						style="background-image: url(./images/cappella/rooms-img-2.png)"
+					>
+						<div class="info">
+							<div class="info__block">
+								<div class="info__head section__head">
+									<h2 class="section__title info__title">Odri</h2>
+									<span class="section__big info__big">O</span>
+									<span class="info__line section__line"></span>
+								</div>
+								<p class="section__text info__text">
+									Разнообразный и богатый опыт сложившаяся структура организации
+									позволяет выполнять важные задания по разработке системы
+									обучения кадров, соответствует насущным потребностям.
+								</p>
+								<button class="btn-border info__btn">
+									<span class="btn-text">Больше</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div
+						id="rooms-classic"
+						class="rooms__item right"
+						style="background-image: url(./images/cappella/rooms-img-3.png)"
+					>
+						<div class="info">
+							<div class="info__block">
+								<div class="info__head section__head">
+									<h2 class="section__title info__title">Classic</h2>
+									<span class="section__big info__big">C</span>
+									<span class="info__line section__line"></span>
+								</div>
+								<p class="section__text info__text">
+									Разнообразный и богатый опыт сложившаяся структура организации
+									позволяет выполнять важные задания по разработке системы
+									обучения кадров, соответствует насущным потребностям.
+								</p>
+								<button class="btn-border info__btn">
+									<span class="btn-text">Больше</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div
+						id="rooms-retro"
+						class="rooms__item left"
+						style="background-image: url(./images/cappella/rooms-img-4.png)"
+					>
+						<div class="info">
+							<div class="info__block">
+								<div class="info__head section__head">
+									<h2 class="section__title info__title">Retro</h2>
+									<span class="section__big info__big">R</span>
+									<span class="info__line section__line"></span>
+								</div>
+								<p class="section__text info__text">
+									Разнообразный и богатый опыт сложившаяся структура организации
+									позволяет выполнять важные задания по разработке системы
+									обучения кадров, соответствует насущным потребностям.
+								</p>
+								<button class="btn-border info__btn">
+									<span class="btn-text">Больше</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /.section rooms -->
+			<section class="section news">
+				<div class="container">
+					<div class="news__top">
+						<h2 class="section__title news__title">Новости</h2>
+						<span class="section__big news__big">Н</span>
+						<span class="news__line"></span>
+						<div class="news__action">
+							<button class="news__btn news__prev">
+								<svg
+									class="icon"
+									viewBox="0 0 18 10"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M0.206228 5.49771C0.20644 5.49792 0.206615 5.49817 0.206861 5.49838L3.88083 9.15463C4.15607 9.42853 4.60125 9.42751 4.87522 9.15224C5.14916 8.877 5.14811 8.43182 4.87287 8.15788L2.40616 5.70313L17.2969 5.70313C17.6852 5.70313 18 5.38834 18 5C18 4.61167 17.6852 4.29688 17.2969 4.29688L2.4062 4.29688L4.87283 1.84213C5.14807 1.56819 5.14913 1.12301 4.87519 0.84777C4.60122 0.572461 4.156 0.571512 3.88079 0.84538L0.206825 4.50163C0.206615 4.50184 0.20644 4.50209 0.206192 4.5023C-0.0691857 4.77715 -0.0683063 5.22377 0.206228 5.49771Z"
+									/>
+								</svg>
+							</button>
+							<button class="news__btn news__next">
+								<svg
+									class="icon"
+									viewBox="0 0 18 10"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M17.7938 4.50229C17.7936 4.50208 17.7934 4.50184 17.7931 4.50163L14.1192 0.845375C13.8439 0.571473 13.3987 0.572492 13.1248 0.847765C12.8508 1.123 12.8519 1.56819 13.1271 1.84212L15.5938 4.29687L0.703124 4.29687C0.314788 4.29687 -6.94318e-07 4.61166 -7.62217e-07 5C-8.30116e-07 5.38833 0.314788 5.70312 0.703124 5.70312L15.5938 5.70312L13.1272 8.15787C12.8519 8.43181 12.8509 8.87699 13.1248 9.15223C13.3988 9.42754 13.844 9.42849 14.1192 9.15462L17.7932 5.49837C17.7934 5.49816 17.7936 5.49792 17.7938 5.49771C18.0692 5.22286 18.0683 4.77623 17.7938 4.50229Z"
+									/>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="news__wrapper">
+						<div class="news__slider">
+							<div class="news__item item">
+								<div class="item__description">
+									<h3 class="item__title">Очень длинный заголовок</h3>
+									<p class="item__text">
+										Разнообразный и богатый опыт сложившаяся структура
+										организации позволяет выполнять важные задания по разработке
+										...
+									</p>
+									<div class="item__action">
+										<div class="item__date">
+											<span class="icon">
+												<img src="./svg/cappella/calendar.svg" alt="" />
+											</span>
+											<span class="text">8.12.2020</span>
+										</div>
+										<a href="#" class="item__more">Детальнее</a>
+									</div>
+								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-1.png" />
+								</div>
+							</div>
+							<div class="news__item item">
+								<div class="item__description">
+									<h3 class="item__title">Очень длинный заголовок</h3>
+									<p class="item__text">
+										Разнообразный и богатый опыт сложившаяся структура
+										организации позволяет выполнять важные задания по разработке
+										...
+									</p>
+									<div class="item__action">
+										<div class="item__date">
+											<img
+												class="icon"
+												alt=""
+												src="./svg/cappella/calendar.svg"
+											/>
+											<span class="text">8.12.2020</span>
+										</div>
+										<a href="#" class="item__more">Детальнее</a>
+									</div>
+								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-2.png" />
+								</div>
+							</div>
+							<div class="news__item item">
+								<div class="item__description">
+									<h3 class="item__title">Очень длинный заголовок</h3>
+									<p class="item__text">
+										Разнообразный и богатый опыт сложившаяся структура
+										организации позволяет выполнять важные задания по разработке
+										...
+									</p>
+									<div class="item__action">
+										<div class="item__date">
+											<span class="icon">
+												<img src="./svg/cappella/calendar.svg" alt="" />
+											</span>
+											<span class="text">8.12.2020</span>
+										</div>
+										<a href="#" class="item__more">Детальнее</a>
+									</div>
+								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-1.png" />
+								</div>
+							</div>
+							<div class="news__item item">
+								<div class="item__description">
+									<h3 class="item__title">Очень длинный заголовок</h3>
+									<p class="item__text">
+										Разнообразный и богатый опыт сложившаяся структура
+										организации позволяет выполнять важные задания по разработке
+										...
+									</p>
+									<div class="item__action">
+										<div class="item__date">
+											<img
+												class="icon"
+												alt=""
+												src="./svg/cappella/calendar.svg"
+											/>
+											<span class="text">8.12.2020</span>
+										</div>
+										<a href="#" class="item__more">Детальнее</a>
+									</div>
+								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-2.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /.section news -->
+			<section
+				id="contacts"
+				class="section contacts"
+				style="background: url('./images/homepage/home-bg.png')"
+			>
+				<div class="contacts__container">
+					<div class="contacts__top">
+						<div class="contacts__head section__head">
+							<h2 class="contacts__title section__title">Контакты</h2>
+							<span class="contacts__big">К</span>
+							<span class="contacts__line section__line"></span>
+						</div>
+						<form action="#" class="contacts__form form">
+							<label for="formName" class="form__label">
+								<span class="form__title">Ваше имя</span>
+								<input
+									type="text"
+									class="form__input form__input-name"
+									placeholder="Введите Ваше имя"
+									id="formName"
+								/>
+							</label>
+							<label for="formSurname" class="form__label">
+								<span class="form__title">Ваша фамилия</span>
+								<input
+									type="text"
+									class="form__input form__input-surname"
+									placeholder="Введите Вашу фамилию"
+									id="formSurname"
+								/>
+							</label>
+							<label for="formPhone" class="form__label">
+								<span class="form__title">Ваш телефон</span>
+								<input
+									type="tel"
+									class="form__input form__input-phone"
+									placeholder="Введите Ваш телефон"
+									id="formPhone"
+								/>
+							</label>
+							<label for="formEmail" class="form__label">
+								<span class="form__title">Ваш E-mail</span>
+								<input
+									type="email"
+									class="form__input form__input-email"
+									placeholder="Введите Ваш e-mail"
+									id="formEmail"
+								/>
+							</label>
+							<button class="btn-border form__submit">
+								<span class="text">Отправить</span>
+							</button>
+						</form>
+					</div>
+				</div>
+				<div class="contacts__map map">
+					<div class="map__img" id="cappellaMap"></div>
+					<div class="contacts__window window">
+						<div
+							class="window__wrapper"
+							style="background-image: url(./images/homepage/home-bg.png)"
+						>
+							<div class="window__block window__address">
+								<div class="window__icon">
+									<svg class="icon" viewBox="0 0 14 18">
+										<path
+											d="M7.22692 0.00375168C3.57149 -0.119438 0.56958 2.80709 0.56958 6.43469C0.56958 10.5516 4.52042 13.5394 6.73486 17.8362C6.84729 18.0544 7.16135 18.0547 7.27416 17.8365C9.27745 13.9703 12.7013 11.3777 13.3358 7.65299C13.9928 3.79863 11.1346 0.135493 7.22692 0.00375168ZM7.0042 9.80519C5.14275 9.80519 3.6337 8.2961 3.6337 6.43469C3.6337 4.57328 5.14278 3.06419 7.0042 3.06419C8.86564 3.06419 10.3747 4.57328 10.3747 6.43469C10.3747 8.2961 8.86564 9.80519 7.0042 9.80519Z"
+										/>
+									</svg>
+								</div>
+								<div class="window__info">
+									<span class="window__title">Адрес:</span>
+									<a href="#" class="window__val">
+										Derech HaMaccabim 8 Rishon LeTsiyon
+									</a>
+								</div>
+							</div>
+							<div class="window__block window__phone">
+								<div class="window__icon">
+									<svg class="icon" viewBox="0 0 18 18">
+										<path
+											d="M7.45387 10.5465C5.7358 8.82843 5.34787 7.11036 5.26036 6.42201C5.2359 6.23168 5.3014 6.04081 5.43756 5.9056L6.82791 4.51587C7.03243 4.31148 7.06872 3.99294 6.91542 3.74777L4.70174 0.310393C4.53214 0.0389184 4.18391 -0.0590595 3.89763 0.0841516L0.343873 1.75784C0.112374 1.87183 -0.0237905 2.1178 0.00249361 2.3745C0.188701 4.14346 0.959907 8.49201 5.23336 12.7658C9.5068 17.0395 13.8547 17.8104 15.6246 17.9966C15.8813 18.0229 16.1273 17.8868 16.2413 17.6553L17.915 14.1015C18.0577 13.8158 17.9603 13.4685 17.69 13.2986L14.2526 11.0856C14.0076 10.9321 13.689 10.9681 13.4845 11.1725L12.0948 12.5628C11.9596 12.699 11.7687 12.7645 11.5784 12.74C10.89 12.6525 9.17194 12.2646 7.45387 10.5465Z"
+										/>
+										<path
+											d="M14.2758 9.62094C13.933 9.62094 13.6551 9.34305 13.6551 9.00025C13.6522 6.43047 11.5698 4.34798 8.99998 4.34508C8.65718 4.34508 8.37929 4.06718 8.37929 3.72439C8.37929 3.38159 8.65718 3.1037 8.99998 3.1037C12.2551 3.10729 14.8929 5.74516 14.8965 9.00025C14.8965 9.34305 14.6186 9.62094 14.2758 9.62094Z"
+										/>
+										<path
+											d="M17.3793 9.62069C17.0365 9.62069 16.7586 9.3428 16.7586 9C16.7538 4.71702 13.283 1.24617 8.99998 1.24138C8.65718 1.24138 8.37929 0.963487 8.37929 0.62069C8.37929 0.277892 8.65718 0 8.99998 0C13.9683 0.0054732 17.9945 4.03171 18 9C18 9.16462 17.9346 9.32249 17.8182 9.43889C17.7018 9.5553 17.5439 9.62069 17.3793 9.62069Z"
+										/>
+									</svg>
+								</div>
+								<div class="window__info">
+									<span class="window__title">Телефон:</span>
+									<a href="#" class="window__val">055-559-3121</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="link">
+					<a href="#" class="link-btn">
+						<svg viewBox="0 0 160 50" class="link-bg">
+							<path
+								d="M79.9999 0C105 0 125 50 160 50H-6.10352e-05C35 50 55 0 79.9999 0Z"
+							/>
+						</svg>
+						<svg class="link-icon icon" viewBox="0 0 24 14">
+							<path
+								d="M11.3415 1.11392L0.271522 12.2146C-0.0909608 12.5783 -0.0903515 13.1672 0.273397 13.5303C0.637099 13.8931 1.22627 13.8921 1.58903 13.5284L12.0002 3.08843L22.4113 13.5288C22.7741 13.8925 23.3629 13.8934 23.7266 13.5306C23.909 13.3486 24.0001 13.1102 24.0001 12.8717C24.0001 12.6339 23.9096 12.3964 23.7285 12.2147L12.6588 1.11392C12.4845 0.938749 12.2473 0.840452 12.0002 0.840452C11.753 0.840452 11.5161 0.93903 11.3415 1.11392Z"
+							/>
+						</svg>
+					</a>
+				</div>
+			</section>
+			<!-- /.section contacts -->
+		</main>
+		<!-- /.main -->
+		<footer
+			class="footer"
+			style="background: url(./images/homepage/home-bg.png)"
+		>
+			<div class="container footer__wrapper">
+				<nav class="footer-navbar navbar">
+					<a href="#" class="navbar__logo">
+						<img src="./svg/cappella-logo.svg" alt="A Cappella Logo" />
+					</a>
+					<ul class="navbar__list">
+						<li class="navbar__item">
+							<a href="#about" class="navbar__link">О нас</a>
+						</li>
+						<li class="navbar__item">
+							<a href="#gallery" class="navbar__link">Галерея</a>
+						</li>
+						<li class="navbar__item">
+							<a href="#rooms" class="navbar__link">Комнаты</a>
+						</li>
+						<li class="navbar__item">
+							<a href="#contacts" class="navbar__link">Контакты</a>
+						</li>
+					</ul>
+					<div class="navbar__social">
+						<a href="#" class="navbar__social-link">
+							<svg class="icon" viewBox="0 0 20 20">
+								<path
+									d="M10.0025 0H9.9975C4.48375 0 0 4.485 0 10C0 12.1875 0.705 14.215 1.90375 15.8612L0.6575 19.5763L4.50125 18.3475C6.0825 19.395 7.96875 20 10.0025 20C15.5162 20 20 15.5138 20 10C20 4.48625 15.5162 0 10.0025 0ZM15.8212 14.1213C15.58 14.8025 14.6225 15.3675 13.8587 15.5325C13.3363 15.6437 12.6537 15.7325 10.3562 14.78C7.4175 13.5625 5.525 10.5763 5.3775 10.3825C5.23625 10.1887 4.19 8.80125 4.19 7.36625C4.19 5.93125 4.91875 5.2325 5.2125 4.9325C5.45375 4.68625 5.8525 4.57375 6.235 4.57375C6.35875 4.57375 6.47 4.58 6.57 4.585C6.86375 4.5975 7.01125 4.615 7.205 5.07875C7.44625 5.66 8.03375 7.095 8.10375 7.2425C8.175 7.39 8.24625 7.59 8.14625 7.78375C8.0525 7.98375 7.97 8.0725 7.8225 8.2425C7.675 8.4125 7.535 8.5425 7.3875 8.725C7.2525 8.88375 7.1 9.05375 7.27 9.3475C7.44 9.635 8.0275 10.5937 8.8925 11.3637C10.0087 12.3575 10.9137 12.675 11.2375 12.81C11.4787 12.91 11.7662 12.8863 11.9425 12.6988C12.1663 12.4575 12.4425 12.0575 12.7238 11.6638C12.9237 11.3813 13.1763 11.3462 13.4412 11.4462C13.7113 11.54 15.14 12.2462 15.4338 12.3925C15.7275 12.54 15.9212 12.61 15.9925 12.7338C16.0625 12.8575 16.0625 13.4388 15.8212 14.1213Z"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="navbar__social-link">
+							<svg class="icon" viewBox="0 0 11 20">
+								<path
+									d="M8.33027 3.32083H10.1561V0.140833C9.84111 0.0975 8.75777 0 7.49611 0C4.86361 0 3.06027 1.65583 3.06027 4.69917V7.5H0.155273V11.055H3.06027V20H6.62194V11.0558H9.40944L9.85194 7.50083H6.62111V5.05167C6.62194 4.02417 6.89861 3.32083 8.33027 3.32083Z"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="navbar__social-link">
+							<svg class="icon" viewBox="0 0 20 20">
+								<path
+									d="M14.5862 0H5.41381C2.42858 0 0 2.42858 0 5.41381V14.5863C0 17.5714 2.42858 20 5.41381 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41381C20 2.42858 17.5714 0 14.5862 0ZM9.99998 15.4686C6.98454 15.4686 4.53139 13.0154 4.53139 9.99998C4.53139 6.98454 6.98454 4.53139 9.99998 4.53139C13.0154 4.53139 15.4686 6.98454 15.4686 9.99998C15.4686 13.0154 13.0154 15.4686 9.99998 15.4686ZM15.5993 5.82106C14.7082 5.82106 13.9834 5.09627 13.9834 4.20516C13.9834 3.31405 14.7082 2.58911 15.5993 2.58911C16.4904 2.58911 17.2154 3.31405 17.2154 4.20516C17.2154 5.09627 16.4904 5.82106 15.5993 5.82106Z"
+								/>
+								<path
+									d="M9.99998 5.70388C7.63121 5.70388 5.70388 7.63106 5.70388 9.99998C5.70388 12.3688 7.63121 14.2961 9.99998 14.2961C12.3689 14.2961 14.2961 12.3688 14.2961 9.99998C14.2961 7.63106 12.3689 5.70388 9.99998 5.70388Z"
+								/>
+								<path
+									d="M15.5993 3.76174C15.3549 3.76174 15.1559 3.96072 15.1559 4.20516C15.1559 4.44961 15.3549 4.64858 15.5993 4.64858C15.8439 4.64858 16.0429 4.44976 16.0429 4.20516C16.0429 3.96056 15.8439 3.76174 15.5993 3.76174Z"
+								/>
+							</svg>
+						</a>
+					</div>
+					<button class="navbar__btn btn-normal">
+						<svg viewBox="0 0 13 13" class="icon">
+							<path
+								d="M12.7817 5.81154L6.949 0.49684C6.69298 0.263526 6.30692 0.263552 6.05101 0.496815L0.218309 5.81157C0.0132296 5.99845 -0.0545125 6.28637 0.0456788 6.54508C0.145895 6.80378 0.389899 6.97093 0.667342 6.97093H1.59892V12.2959C1.59892 12.507 1.77011 12.6782 1.98123 12.6782H5.17826C5.38938 12.6782 5.56056 12.507 5.56056 12.2959V9.06273H7.43952V12.2959C7.43952 12.507 7.6107 12.6782 7.82182 12.6782H11.0187C11.2298 12.6782 11.401 12.507 11.401 12.2959V6.97093H12.3328C12.6102 6.97093 12.8542 6.80376 12.9544 6.54508C13.0545 6.28635 12.9867 5.99845 12.7817 5.81154Z"
+							/>
+							<path
+								d="M11.3013 1.08494H8.73382L11.6836 3.7671V1.46722C11.6836 1.25609 11.5124 1.08494 11.3013 1.08494Z"
+							/>
+						</svg>
+						<span class="text">event hall</span>
+					</button>
+				</nav>
+				<div class="footer__bottom">
+					<span class="footer__copy">
+						Event hall © 2020 All rights reserved.
+					</span>
+					<span class="footer__author">Site development: StyleSites</span>
+				</div>
+			</div>
+		</footer>
+		<!-- /.footer -->
+
+		<!-- Scope -->
+		<div class="scope">
+			<div class="scope__wrapper">
+				<div class="scope__btn">
+					<button class="btn">
+						<svg class="icon" viewBox="0 0 12 26">
+							<path
+								d="M5.95748 4.37695C7.16614 4.37695 8.14596 3.39714 8.14596 2.18848C8.14596 0.979815 7.16614 0 5.95748 0C4.74882 0 3.769 0.979815 3.769 2.18848C3.769 3.39714 4.74882 4.37695 5.95748 4.37695Z"
+							/>
+							<path
+								d="M6.72022 5.42056C6.17492 5.30985 5.58204 5.31471 5.04645 5.44096C1.40805 5.86729 0.226653 10.0787 0.560241 13.2898C0.704942 14.678 2.89342 14.6926 2.74726 13.2898C2.62587 12.1195 2.67782 10.3535 3.29984 9.09829C3.29984 10.624 3.29984 12.1496 3.29984 13.6748C3.29984 13.7287 3.30519 13.7792 3.30761 13.8312C3.30616 13.8559 3.30033 13.8768 3.30033 13.9021C3.30033 17.5337 3.29402 21.1638 3.14398 24.7925C3.07745 26.4056 5.57864 26.3993 5.64468 24.7925C5.76218 21.9485 5.7918 19.103 5.7986 16.2571C5.91708 16.2649 6.03556 16.2649 6.15404 16.2581C6.16132 19.104 6.18997 21.9495 6.30651 24.7925C6.37303 26.3993 8.87422 26.4056 8.80721 24.7925C8.65717 21.1638 8.65183 17.5337 8.65183 13.9021C8.65183 13.7894 8.63678 13.687 8.61395 13.5884C8.61055 12.0117 8.55034 10.4336 8.5688 8.85793C9.31367 10.119 9.38165 12.0423 9.25248 13.2888C9.10584 14.6906 11.2948 14.6766 11.4395 13.2888C11.7809 10.0112 10.5427 5.69054 6.72022 5.42056Z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<div class="scope__points">
+					<button class="scope__close">
+						<svg class="icon" viewBox="0 0 14 14">
+							<path
+								d="M8.28264 6.99998L13.734 1.54848C14.0887 1.19388 14.0887 0.620546 13.734 0.265948C13.3794 -0.0886494 12.806 -0.0886494 12.4514 0.265948L6.99994 5.71745L1.5486 0.265948C1.19384 -0.0886494 0.620671 -0.0886494 0.266073 0.265948C-0.088691 0.620546 -0.088691 1.19388 0.266073 1.54848L5.71741 6.99998L0.266073 12.4515C-0.088691 12.8061 -0.088691 13.3794 0.266073 13.734C0.44279 13.9109 0.675147 13.9998 0.907338 13.9998C1.13953 13.9998 1.37172 13.9109 1.5486 13.734L6.99994 8.28251L12.4514 13.734C12.6283 13.9109 12.8605 13.9998 13.0927 13.9998C13.3249 13.9998 13.5571 13.9109 13.734 13.734C14.0887 13.3794 14.0887 12.8061 13.734 12.4515L8.28264 6.99998Z"
+							/>
+						</svg>
+					</button>
+
+					<ul class="scope__list">
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Увеличить текст</span>
+								<svg class="icon" viewBox="0 0 25 25">
+									<path
+										d="M10.7175 0C16.6367 0 21.4351 4.79839 21.4351 10.7175C21.4351 13.2315 20.5692 15.5431 19.1198 17.3709L25 23.2511L23.2511 25L17.3709 19.1198C15.543 20.5692 13.2315 21.4351 10.7175 21.4351C4.79839 21.4351 0 16.6367 0 10.7175C0 4.79839 4.79839 0 10.7175 0Z"
+									/>
+									<rect x="5" y="9" width="11" height="3" fill="white" />
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Уменьшить текст</span>
+								<svg class="icon" viewBox="0 0 25 25">
+									<path
+										d="M10.7175 0C16.6367 0 21.4351 4.79839 21.4351 10.7175C21.4351 13.2315 20.5692 15.5431 19.1198 17.3709L25 23.2511L23.2511 25L17.3709 19.1198C15.543 20.5692 13.2315 21.4351 10.7175 21.4351C4.79839 21.4351 0 16.6367 0 10.7175C0 4.79839 4.79839 0 10.7175 0ZM5.771 11.9542H9.48091V15.6641H11.9542V11.9542H15.6641V9.48091H11.9542V5.771H9.48091V9.48091H5.771V11.9542Z"
+									/>
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Оттенки серого</span>
+								<img
+									src="./images/cappella/icon-gray.png"
+									alt=""
+									class="icon"
+								/>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Высокий контраст</span>
+								<svg class="icon" viewBox="0 0 20 20">
+									<path
+										d="M10 0C4.47301 0 0 4.47254 0 10C0 15.527 4.47254 20 10 20C15.527 20 20 15.5275 20 10C20 4.47301 15.5275 0 10 0ZM10.5859 18.8091V1.1909C15.1273 1.48637 18.8281 5.25852 18.8281 10C18.8281 14.7402 15.1295 18.5135 10.5859 18.8091Z"
+									/>
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Инвертированный контраст</span>
+								<svg class="icon" viewBox="0 0 22 20">
+									<path
+										d="M4.03104 14.8594C2.92471 14.3258 2.1819 13.3719 1.39167 12.4827C1.01236 12.0461 0.696266 11.5287 0.348565 11.0599C-0.157182 10.3646 -0.109768 9.6694 0.348565 8.958C1.70776 6.92081 3.39885 5.25549 5.56408 4.13989C6.35431 3.73569 6.33851 3.73569 5.94339 2.97578C5.69052 2.47457 5.42184 1.97336 5.16897 1.47214C5.10575 1.32663 4.99512 1.06794 5.04253 1.0356C5.51667 0.679906 6.00661 0.324206 6.52816 0.0493478C6.92328 -0.14467 7.06552 0.259534 7.20776 0.534392C7.53966 1.14878 7.91897 1.747 8.18764 2.37756C8.40891 2.89494 8.74081 2.97578 9.24655 2.94345C10.2897 2.89494 11.3486 2.83027 12.3917 2.92728C14.952 3.13746 17.1647 4.25307 19.0296 5.98306C19.9779 6.85614 20.7681 7.92324 21.5741 8.94183C22.1273 9.63706 22.0483 10.3646 21.5583 11.1084C20.1833 13.1617 18.4448 14.827 16.248 15.9426C15.5842 16.2822 15.5842 16.2822 15.9161 16.9451C16.2006 17.4948 16.4693 18.0445 16.7537 18.5942C16.9276 18.9337 16.9118 19.1601 16.5641 19.3865C15.2207 20.2919 15.1101 20.2757 14.3356 18.8206C12.0756 14.4713 9.7681 10.1059 7.46063 5.7567C7.27098 5.41717 7.17615 4.98063 6.60718 5.27166C5.92759 5.62736 5.88017 5.64353 6.24368 6.32259C7.99799 9.6694 9.7681 13 11.5382 16.3468C12.0124 17.2361 11.9966 17.2199 11.0325 17.2361C10.5425 17.2523 10.2739 17.0744 10.0526 16.6217C8.47213 13.6144 6.87586 10.6071 5.2796 7.59987C5.21638 7.4867 5.16897 7.35735 5.08994 7.24417C4.91609 7.01782 4.64742 6.61362 4.5842 6.64595C4.26811 6.79147 3.93621 7.03399 3.74655 7.32501C3.65173 7.45436 3.80977 7.82623 3.9204 8.03641C5.24799 10.5586 6.57558 13.0647 7.90316 15.5708C8.06121 15.878 8.21925 16.1852 8.3773 16.4924C8.51954 16.7672 8.44052 16.9289 8.12443 16.8481C7.28678 16.6217 6.55977 16.3468 6.11724 15.3929C5.13736 13.4042 4.03104 11.4802 2.98793 9.50771C2.90891 9.3622 2.82989 9.23286 2.76667 9.08734C2.59282 8.73164 2.38736 8.66697 2.13448 9.02267C2.03966 9.15202 1.96063 9.29753 1.85 9.41071C1.4865 9.79874 1.53391 10.1221 1.80259 10.6071C2.59282 11.9976 3.28822 13.4366 4.03104 14.8594ZM14.952 14.924C15.2365 14.7947 15.4262 14.7139 15.6158 14.633C17.2121 13.8408 18.5555 12.7413 19.6302 11.3185C20.7839 9.78257 20.7049 10.1868 19.6618 8.78015C18.5239 7.26034 17.1014 6.08007 15.3787 5.304C15.2681 5.25549 15.1417 5.28783 15.0152 5.27166C15.0626 5.36867 15.0943 5.46568 15.1417 5.54652C15.2049 5.6597 15.2997 5.7567 15.3787 5.86988C17.0382 8.2466 16.7695 11.2377 14.7466 13.3072C14.6517 13.4042 14.4937 13.4851 14.4779 13.5821C14.4463 13.7923 14.4463 14.0348 14.5253 14.2288C14.6201 14.4713 14.8098 14.6977 14.952 14.924ZM14.8098 8.99033C14.7782 7.22801 13.2451 5.38484 11.1905 5.28783C10.7006 5.27166 10.3371 5.56269 10.3529 5.95072C10.3687 6.40343 10.669 6.58128 11.0799 6.66212C12.6603 6.93698 13.1977 7.4867 13.4822 9.15201C13.5612 9.57239 13.7351 9.86341 14.1776 9.87958C14.5569 9.87958 14.8098 9.50771 14.8098 8.99033Z"
+									/>
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Светлый фон</span>
+								<svg class="icon" viewBox="0 0 20 20">
+									<path
+										d="M10 2.88083C9.65501 2.88083 9.37501 2.60083 9.37501 2.25583V0.625C9.37501 0.28 9.65501 0 10 0C10.345 0 10.625 0.28 10.625 0.625V2.25583C10.625 2.60083 10.345 2.88083 10 2.88083Z"
+									/>
+									<path
+										d="M15.475 5.14916C15.315 5.14916 15.155 5.08832 15.0334 4.96582C14.7892 4.72166 14.7892 4.32582 15.0334 4.08166L16.1867 2.92833C16.4309 2.68416 16.8267 2.68416 17.0709 2.92833C17.315 3.17249 17.315 3.56832 17.0709 3.81249L15.9175 4.96582C15.795 5.08749 15.635 5.14916 15.475 5.14916Z"
+										fill="#313643"
+									/>
+									<path
+										d="M19.3756 10.625H17.7448C17.3998 10.625 17.1198 10.345 17.1198 10C17.1198 9.65501 17.3998 9.37501 17.7448 9.37501H19.3756C19.7206 9.37501 20.0006 9.65501 20.0006 10C20.0006 10.345 19.7206 10.625 19.3756 10.625Z"
+									/>
+									<path
+										d="M16.6284 17.2536C16.4684 17.2536 16.3084 17.1927 16.1867 17.0702L15.0334 15.9169C14.7892 15.6727 14.7892 15.2769 15.0334 15.0327C15.2775 14.7886 15.6734 14.7886 15.9175 15.0327L17.0709 16.1861C17.315 16.4302 17.315 16.8261 17.0709 17.0702C16.9484 17.1927 16.7884 17.2536 16.6284 17.2536Z"
+										fill="#313643"
+									/>
+									<path
+										d="M3.37069 17.2536C3.21069 17.2536 3.05069 17.1927 2.92902 17.0702C2.68485 16.8261 2.68485 16.4302 2.92902 16.1861L4.08235 15.0327C4.32652 14.7886 4.72235 14.7886 4.96651 15.0327C5.21068 15.2769 5.21068 15.6727 4.96651 15.9169L3.81318 17.0702C3.69068 17.1927 3.53068 17.2536 3.37069 17.2536Z"
+									/>
+									<path
+										d="M2.25583 10.625H0.625C0.28 10.625 0 10.345 0 10C0 9.65501 0.28 9.37501 0.625 9.37501H2.25583C2.60083 9.37501 2.88083 9.65501 2.88083 10C2.88083 10.345 2.60083 10.625 2.25583 10.625Z"
+									/>
+									<path
+										d="M4.52401 5.14916C4.36402 5.14916 4.20402 5.08832 4.08235 4.96582L2.92902 3.81249C2.68485 3.56832 2.68485 3.17249 2.92902 2.92833C3.17319 2.68416 3.56902 2.68416 3.81318 2.92833L4.96651 4.08166C5.21068 4.32582 5.21068 4.72166 4.96651 4.96582C4.84318 5.08749 4.68401 5.14916 4.52401 5.14916Z"
+									/>
+									<path
+										d="M12.5 17.5V18.5417C12.5 19.3417 11.8417 20 11.0417 20H8.95834C8.25834 20 7.50001 19.4667 7.50001 18.3V17.5H12.5Z"
+									/>
+									<path
+										d="M13.6756 5.46725C12.3089 4.35892 10.5089 3.92559 8.75056 4.30059C6.54222 4.75892 4.75056 6.55892 4.29222 8.76725C3.82556 11.0339 4.67556 13.2839 6.49222 14.6589C6.98389 15.0256 7.32556 15.5923 7.44222 16.2506V16.2589C7.45889 16.2506 7.48389 16.2506 7.50056 16.2506H12.5006C12.5172 16.2506 12.5256 16.2506 12.5422 16.2589V16.2506C12.6589 15.6173 13.0339 15.0339 13.6089 14.5839C15.0172 13.4673 15.8339 11.8006 15.8339 10.0006C15.8339 8.23392 15.0506 6.58392 13.6756 5.46725ZM13.1256 10.4173C12.7839 10.4173 12.5006 10.1339 12.5006 9.79225C12.5006 8.52559 11.4756 7.50059 10.2089 7.50059C9.86722 7.50059 9.58389 7.21725 9.58389 6.87559C9.58389 6.53392 9.86722 6.25059 10.2089 6.25059C12.1589 6.25059 13.7506 7.84225 13.7506 9.79225C13.7506 10.1339 13.4672 10.4173 13.1256 10.4173Z"
+									/>
+									<path
+										d="M7.44222 16.2506H7.50056C7.48389 16.2506 7.45889 16.2506 7.44222 16.2589V16.2506Z"
+									/>
+									<path
+										d="M12.5422 16.2506V16.2589C12.5256 16.2506 12.5172 16.2506 12.5006 16.2506H12.5422Z"
+									/>
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Выделение ссылок</span>
+								<svg class="icon" viewBox="0 0 20 20">
+									<path
+										d="M7.40673 5.01432C5.05013 7.45255 5.56438 11.4989 8.26383 13.2914C8.35278 13.3505 8.47111 13.3387 8.54751 13.2641C9.11582 12.7088 9.59658 12.171 10.0175 11.4869C10.0819 11.3822 10.0419 11.2464 9.93384 11.1879C9.52209 10.9648 9.11238 10.5466 8.88173 10.1047C8.60543 9.55455 8.51109 8.93798 8.65737 8.30106C8.65721 8.30106 8.65752 8.3011 8.65737 8.30106C8.82568 7.48562 9.70158 6.72715 10.3702 6.02563C10.3688 6.02516 10.3674 6.02465 10.366 6.02418L12.8712 3.46733C13.8695 2.4484 15.5116 2.44 16.5203 3.44869C17.5392 4.44699 17.5561 6.09742 16.5578 7.11631L15.0404 8.6767C14.9702 8.74892 14.9474 8.85428 14.9802 8.94951C15.3296 9.96266 15.4155 11.3912 15.1814 12.4705C15.1749 12.5008 15.2121 12.5205 15.2337 12.4984L18.4632 9.20228C20.5263 7.09665 20.5088 3.6684 18.4244 1.58395C16.2971 -0.543287 12.834 -0.525584 10.7286 1.62323L7.41967 5.00048C7.41529 5.00509 7.41115 5.00978 7.40673 5.01432Z"
+									/>
+									<path
+										d="M13.445 13.7552C13.445 13.755 13.4449 13.7553 13.445 13.7552C13.4471 13.7543 13.4488 13.7538 13.4509 13.7529C14.11 12.5477 14.2397 11.1655 13.9308 9.81809L13.9294 9.81953L13.9279 9.81887C13.6346 8.61876 12.8298 7.42706 11.7368 6.69333C11.6428 6.63021 11.4926 6.63752 11.4046 6.70873C10.8509 7.15639 10.309 7.73043 9.95143 8.46299C9.89527 8.578 9.93732 8.71615 10.048 8.7804C10.463 9.02132 10.8378 9.37406 11.0887 9.84235C11.2843 10.1732 11.4773 10.8006 11.3525 11.475C11.3526 11.475 11.3524 11.475 11.3525 11.475C11.2361 12.3692 10.3328 13.1894 9.61499 13.9285C9.06857 14.4873 7.6799 15.9037 7.12372 16.4719C6.12542 17.4908 4.47499 17.5076 3.4561 16.5093C2.43721 15.511 2.42036 13.8606 3.41866 12.8417L4.94055 11.2766C5.00953 11.2057 5.03298 11.1026 5.0023 11.0085C4.66438 9.97171 4.5718 8.57534 4.78509 7.49724C4.79103 7.46719 4.75406 7.448 4.73261 7.46989L1.55169 10.7165C-0.532519 12.8437 -0.514855 16.3071 1.59101 18.4129C3.71813 20.4971 7.1637 20.4619 9.24783 18.3347C9.97187 17.5249 13.0712 14.6552 13.445 13.7552Z"
+									/>
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Читаемый шрифт</span>
+								<svg class="icon" viewBox="0 0 20 20">
+									<path
+										d="M18.1526 17.8516L10.5745 0.976562H9.41902L2.1534 17.8516H0V19.0234H6.25V17.8516H3.4293L5.29617 13.5156H12.1865L14.1336 17.8516H12.1875V19.0234H20V17.8516H18.1526ZM5.8007 12.3438L8.66879 5.68242L11.6602 12.3438H5.8007Z"
+									/>
+								</svg>
+							</a>
+						</li>
+						<li class="scope__item">
+							<a href="#" class="scope__link">
+								<span class="text">Сброс</span>
+								<svg class="icon" viewBox="0 0 20 20">
+									<path
+										d="M19.5748 9.01963C19.136 8.72691 18.543 8.84545 18.2505 9.28428L18.2221 9.32687C17.8766 4.60899 13.928 0.875916 9.12349 0.875916C4.09277 0.875979 0 4.96875 0 9.99947C0 15.0302 4.09277 19.123 9.12349 19.123C9.82671 19.123 10.3967 18.5529 10.3967 17.8497C10.3967 17.1465 9.82671 16.5764 9.12349 16.5764C5.49692 16.5764 2.54652 13.626 2.54652 9.99947C2.54652 6.37296 5.49692 3.4225 9.12349 3.4225C12.4848 3.4225 15.2647 5.95725 15.6535 9.21558C15.3471 8.83418 14.7949 8.74308 14.3802 9.01963C13.9414 9.31222 13.8229 9.90518 14.1155 10.3439L16.0064 13.1796C16.2296 13.5142 16.5926 13.714 16.9776 13.714C17.3626 13.714 17.7256 13.5141 17.9486 13.1796L19.8395 10.3439C20.132 9.90512 20.0136 9.31222 19.5748 9.01963Z"
+									/>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- /.scope__wrapper -->
+		</div>
+		<!-- /.scope -->
+	</body>
+</html>
