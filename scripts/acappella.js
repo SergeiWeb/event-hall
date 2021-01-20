@@ -14,10 +14,10 @@ $('.gallery__slider').slick({
 		{
 			breakpoint: 480,
 			settings: {
-				slidesToShow: 1
-			}
-		}
-	]
+				slidesToShow: 1,
+			},
+		},
+	],
 })
 
 $('.news__slider').slick({
@@ -127,4 +127,6 @@ document.querySelectorAll('.header .navbar__item').forEach(item => {
 	if (!item.classList.contains('drop-list')) removeClasses(item)
 })
 
-document.querySelectorAll('.header .navbar__item .dropdown__item').forEach(item => removeClasses(item))
+document
+	.querySelectorAll('.header .navbar__item .dropdown__item')
+	.forEach(item => removeClasses(item))
