@@ -115,18 +115,19 @@ burgerBtn.addEventListener('click', function () {
 	document.body.classList.toggle('no-scroll')
 })
 
-function removeClasses(el) {
-	el.addEventListener('click', () => {
-		burgerBtn.classList.remove('active')
-		navbar.classList.remove('open-menu')
-		document.body.classList.remove('no-scroll')
-	})
+function removeClasses() {
+	burgerBtn.classList.remove('active')
+	navbar.classList.remove('open-menu')
+	document.body.classList.remove('no-scroll')
 }
 
 document.querySelectorAll('.header .navbar__item').forEach(item => {
-	if (!item.classList.contains('drop-list')) removeClasses(item)
+	if (!item.classList.contains('drop-list'))
+		item.addEventListener('click', removeClasses)
 })
+
+document.querySelector('#navMask').addEventListener('click', removeClasses)
 
 document
 	.querySelectorAll('.header .navbar__item .dropdown__item')
-	.forEach(item => removeClasses(item))
+	.forEach(item => item.addEventListener('click', removeClasses))

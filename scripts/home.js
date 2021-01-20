@@ -143,3 +143,8 @@ burgerBtn.addEventListener('click', function () {
 	this.classList.toggle('active')
 	navbar.classList.toggle('open-menu')
 })
+
+document.querySelector('#navMask').addEventListener('click', () => {
+	burgerBtn.classList.remove('active')
+	navbar.classList.remove('open-menu')
+})
