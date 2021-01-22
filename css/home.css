@@ -147,6 +147,7 @@ img {
   background: rgba(255, 255, 255, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-align: center;
 }
 
 .btn-border::before {
@@ -188,6 +189,7 @@ img {
   line-height: 1.1875rem;
   border-image-slice: 1;
   border-width: 1px;
+  text-align: center;
   background: rgba(255, 255, 255, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -546,6 +548,10 @@ img {
   fill: #ffffff;
 }
 
+.header .navbar__link {
+  cursor: pointer;
+}
+
 .header .navbar__burger {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -766,6 +772,14 @@ img {
   }
   .section {
     padding: 80px 0;
+  }
+  .section__title {
+    font-size: 3rem;
+    line-height: 3.375rem;
+  }
+  .section__big {
+    font-size: 8.375rem;
+    line-height: 9.75rem;
   }
   .header .navbar__list {
     width: 100%;
