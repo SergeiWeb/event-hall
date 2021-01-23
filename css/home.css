@@ -269,221 +269,8 @@ img {
   text-align: right;
 }
 
-.scope {
-  top: 100px;
-  right: 60px;
-  z-index: 99999;
-  position: fixed;
-}
-
-.scope.scroll .scope__btn {
-  background: #ffffff;
-  -webkit-box-shadow: 0px 14px 22px rgba(4, 3, 37, 0.11);
-          box-shadow: 0px 14px 22px rgba(4, 3, 37, 0.11);
-}
-
-.scope.scroll .scope__btn::after {
-  background: linear-gradient(245deg, rgba(49, 54, 67, 0.3) 0%, #313643 50%, rgba(49, 54, 67, 0.3) 100%);
-}
-
-.scope.scroll .scope__btn:hover {
-  background: rgba(49, 54, 67, 0.2);
-}
-
-.scope.scroll .scope__close {
-  fill: #313643;
-}
-
-.scope.scroll .scope__list {
-  -webkit-box-shadow: 0px 7px 24px rgba(4, 8, 23, 0.11);
-          box-shadow: 0px 7px 24px rgba(4, 8, 23, 0.11);
-}
-
-.scope__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  position: relative;
-}
-
-.scope__btn {
-  background: rgba(255, 255, 255, 0.2);
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  border-radius: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 5px;
-  position: relative;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.scope__btn::after {
-  content: '';
-  top: 50%;
-  left: 50%;
-  width: calc(50px + 2px);
-  height: calc(50px + 2px);
-  border-radius: 50%;
-  background: transparent;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  z-index: 5;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.scope__btn .btn {
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  cursor: pointer;
-  border-image-slice: 1;
-  position: relative;
-  z-index: 9;
-  border-width: 1px;
-  outline: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.scope__btn .btn .icon {
-  width: 25px;
-  height: 25px;
-  fill: #313643;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.scope__btn:hover {
-  background: rgba(49, 54, 67, 0.2);
-}
-
-.scope__btn:hover .btn {
-  background: #313643;
-}
-
-.scope__btn:hover .btn .icon {
-  fill: #ffffff;
-}
-
-.scope__points {
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  pointer-events: none;
-  z-index: -5;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  top: 100px;
-  right: 0;
-  position: absolute;
-  width: 210px;
-}
-
-.scope__points.active {
-  opacity: 1;
-  z-index: 888;
-  pointer-events: visible;
-  -webkit-transform: none;
-          transform: none;
-}
-
-.scope__close {
-  fill: #ffffff;
-  border: none;
-  background: transparent;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: -25px;
-  outline: none;
-}
-
-.scope__close .icon {
-  width: 15px;
-  height: 15px;
-}
-
-.scope__list {
-  background: #ffffff;
-  padding: 7px;
-  border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.scope__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-decoration: none;
-  background: transparent;
-  padding: 10px 15px;
-  border-radius: 30px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.scope__link .text {
-  font-size: 0.875rem;
-  line-height: 1rem;
-  color: rgba(49, 54, 67, 0.8);
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  max-width: 130px;
-  margin-right: 20px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.scope__link .icon {
-  width: 25px;
-  height: 25px;
-  fill: #313643;
-  -o-object-fit: contain;
-     object-fit: contain;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-}
-
-.scope__link:hover {
-  background: rgba(49, 54, 67, 0.1);
-}
-
-.scope__link:hover .text {
-  color: #313643;
+.header .navbar__info {
+  z-index: 88;
 }
 
 .header .navbar__wrapper {
@@ -624,6 +411,54 @@ img {
           transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.header__content .breadcrumb__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+}
+
+.header__content .breadcrumb__item:first-child {
+  margin-left: 0;
+}
+
+.header__content .breadcrumb__item::before {
+  content: '';
+  width: 18px;
+  height: 17px;
+  display: inline-block;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../svg/arrow-right.svg");
+  opacity: 0.6;
+}
+
+.header__content .breadcrumb__item.home::before {
+  background-image: url("../svg/home-icon.svg");
+}
+
+.header__content .breadcrumb__item.active::before {
+  opacity: 1;
+}
+
+.header__content .breadcrumb__item.active .breadcrumb__link {
+  color: #ffffff;
+}
+
+.header__content .breadcrumb__link {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
 [dir='rtl'] .slick-slider .slick-track,
 [dir='rtl'] .slick-slider .slick-list {
   direction: ltr;
@@ -631,16 +466,6 @@ img {
 
 [dir='rtl'] .slick-slide {
   float: left;
-}
-
-[dir='rtl'] .scope {
-  right: auto;
-  left: 60px;
-}
-
-[dir='rtl'] .scope__close {
-  left: auto;
-  right: -25px;
 }
 
 [dir='rtl'] .section__text {
@@ -750,19 +575,6 @@ img {
 @media screen and (max-width: 680px) {
   .container {
     max-width: calc(590px + 2rem);
-  }
-  .scope {
-    right: 16px;
-  }
-  .scope__btn {
-    padding: 4px;
-  }
-  .scope__btn::after {
-    width: 49px;
-    height: 49px;
-  }
-  .scope__btn .btn {
-    padding: 10px;
   }
 }
 

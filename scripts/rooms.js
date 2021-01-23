@@ -1,8 +1,10 @@
 const choiceBtn = document.querySelectorAll('.choice__btn')
 const actionsDescription = document.querySelectorAll('.actions__description')
 const privilegeElem = document.querySelectorAll('.privilege__elem')
+
 const burgerBtn = document.querySelector('#burgerBtn')
 const navbar = document.querySelector('#navbar')
+
 const expressFirstBtn = document.querySelector('#expressFirstBtn')
 const expressLastBtn = document.querySelector('#expressLastBtn')
 const choiceBtnExpress = document.querySelector('#choiceBtnExpress')
@@ -15,7 +17,7 @@ $('.gallery__slider').slick({
 	nextArrow: '.gallery__next',
 	responsive: [
 		{
-			breakpoint: 480,
+			breakpoint: 540,
 			settings: {
 				slidesToShow: 1,
 			},
@@ -78,14 +80,6 @@ function init() {
 
 google.maps.event.addDomListener(window, 'load', init)
 
-// if (choiceBtnExpress.classList.contains('active')) {
-// 	document.querySelector('.tariffs__bottom').classList.add('no-padding')
-// }
-
-// if (!choiceBtnExpress.classList.contains('active')) {
-// 	document.querySelector('.tariffs__bottom').classList.remove('no-padding')
-// }
-
 choiceBtn.forEach(function (item) {
 	item.addEventListener('click', function () {
 		let currentBtn = item
@@ -108,12 +102,6 @@ choiceBtn.forEach(function (item) {
 				item.classList.add('active')
 			})
 		}
-		// if (choiceBtnExpress.classList.contains('active')) {
-		// 	document.querySelector('.tariffs__bottom').classList.add('no-padding')
-		// }
-		// if (!choiceBtnExpress.classList.contains('active')) {
-		// 	document.querySelector('.tariffs__bottom').classList.remove('no-padding')
-		// }
 	})
 })
 
@@ -153,15 +141,3 @@ expressLastBtn.addEventListener('click', function () {
 	document.querySelector('.express-tab-1').classList.remove('active')
 	expressFirstBtn.classList.remove('active')
 })
-
-// if (expressFirstBtn.classList.contains('active')) {
-// 	document.querySelector('.tariffs__bottom').classList.add('no-padding')
-// } else {
-// 	document.querySelector('.tariffs__bottom').classList.remove('no-padding')
-// }
-
-// if (expressLastBtn.classList.contains('active')) {
-// 	document.querySelector('.tariffs__bottom').classList.add('no-padding')
-// } else {
-// 	document.querySelector('.tariffs__bottom').classList.remove('no-padding')
-// }

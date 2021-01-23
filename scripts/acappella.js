@@ -1,6 +1,3 @@
-const scopeBtn = document.querySelector('.scope__btn')
-const scopePoints = document.querySelector('.scope__points')
-const scopeClose = document.querySelector('.scope__close')
 const burgerBtn = document.querySelector('#burgerBtn')
 const navbar = document.querySelector('#navbar')
 
@@ -12,7 +9,7 @@ $('.gallery__slider').slick({
 	nextArrow: '.gallery__next',
 	responsive: [
 		{
-			breakpoint: 480,
+			breakpoint: 540,
 			settings: {
 				slidesToShow: 1,
 			},
@@ -85,29 +82,6 @@ function init() {
 }
 
 google.maps.event.addDomListener(window, 'load', init)
-
-scopeBtn.addEventListener('click', event => {
-	event.preventDefault()
-
-	if (!scopePoints.classList.contains('active')) {
-		scopePoints.classList.add('active')
-	}
-})
-
-scopeClose.addEventListener('click', event => {
-	event.preventDefault()
-	if (scopePoints.classList.contains('active')) {
-		scopePoints.classList.remove('active')
-	}
-})
-
-$(window).scroll(function () {
-	const scope = document.querySelector('.scope')
-
-	window.pageYOffset >= $('#header').height() - 150
-		? scope.classList.add('scroll')
-		: scope.classList.remove('scroll')
-})
 
 burgerBtn.addEventListener('click', function () {
 	this.classList.toggle('active')
