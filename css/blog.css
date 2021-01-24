@@ -229,7 +229,6 @@ img {
 
 .section__line {
   height: 1px;
-  top: 60%;
   opacity: 0.2;
   background: #313643;
   -webkit-box-flex: 1;
@@ -498,7 +497,7 @@ img {
     left: 0;
     width: 100%;
     background: #313643;
-    padding: 70px 15px 20px;
+    padding: 100px 15px 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -597,6 +596,9 @@ img {
   .section__big {
     font-size: 8.375rem;
     line-height: 9.75rem;
+  }
+  .header .navbar {
+    padding: 0;
   }
   .header .navbar__list {
     width: 100%;
