@@ -301,6 +301,10 @@ img {
   transition: 0.3s;
 }
 
+.header .navbar__speech.active {
+  color: #ffffff;
+}
+
 .header .navbar__social {
   display: none;
   -webkit-box-align: center;
@@ -337,6 +341,7 @@ img {
 
 .header .navbar__link {
   cursor: pointer;
+  display: inline-block;
 }
 
 .header .navbar__burger {
@@ -749,10 +754,6 @@ img {
 }
 
 .header .navbar__speech:hover {
-  color: #ffffff;
-}
-
-.header .navbar__speech.active {
   color: #ffffff;
 }
 
