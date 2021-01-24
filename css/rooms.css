@@ -337,6 +337,7 @@ img {
 
 .header .navbar__link {
   cursor: pointer;
+  display: inline-block;
 }
 
 .header .navbar__burger {
