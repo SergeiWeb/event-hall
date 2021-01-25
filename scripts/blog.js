@@ -1,17 +1,6 @@
 const burgerBtn = document.querySelector('#burgerBtn')
 const navbar = document.querySelector('#navbar')
 
-$('.blog__slider').slick({
-	swipe: false,
-	infinite: true,
-	draggable: false,
-	slidesToShow: 1,
-	fade: true,
-	speed: 1000,
-	prevArrow: '.blog__prev',
-	nextArrow: '.blog__next',
-})
-
 burgerBtn.addEventListener('click', function () {
 	this.classList.toggle('active')
 	navbar.classList.toggle('open-menu')
