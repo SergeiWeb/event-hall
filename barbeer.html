@@ -9,8 +9,8 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<!-- Slick JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-		<!-- Swiper JS -->
-		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<!-- Nice Select -->
+		<script src="./scripts/jquery.nice-select.min.js"></script>
 
 		<!-- /* ================================ */ -->
 
@@ -24,34 +24,50 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
 		/>
-		<!-- Swiper CSS -->
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/swiper/swiper-bundle.min.css"
-		/>
+		<!-- Nice Select -->
+		<link rel="stylesheet" href="./css/nice-select.css" />
+
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/kebab.css" />
+		<link rel="stylesheet" href="./css/barbeer.css" />
 		<!-- Scripts -->
-		<script defer src="./scripts/kebab.js" type="module"></script>
+		<script defer src="./scripts/barbeer.js" type="module"></script>
 		<title>Kebab House</title>
 	</head>
 	<body>
 		<header
 			class="header"
-			style="background-image: url(./images/kebab/header-bg.png)"
+			style="background-image: url(./images/BarBeer/header-bg.png)"
 		>
+			<svg class="header__wave" viewBox="0 0 1920 76" fill="none">
+				<path
+					d="M0 19.5V75.5H1920V20C1920 20 1657.5 40 1383 40C1052.5 40 866 0 509 0C186.5 -6.10352e-05 0 19.5 0 19.5Z"
+					fill="white"
+				/>
+				<path
+					opacity="0.1"
+					d="M0 19.5V50C0 50 159 25 509 26.5C811 25 1165 64 1517 64C1773 64 1920 20 1920 20C1920 20 1657.5 40 1383 40C1052.5 40 866 1.4328e-10 509 0C186.5 -6.10351e-05 0 19.5 0 19.5Z"
+					fill="#1C0F01"
+					fill-opacity="0.9"
+				/>
+				<path
+					opacity="0.1"
+					d="M0 19.5V70C0 70 160 10.5 509 11C839.5 11.5895 1164.5 75 1497 75C1771.5 75 1920 20 1920 20C1920 20 1657.5 40 1383 40C1052.5 40 866 1.4328e-10 509 0C186.5 -6.10351e-05 0 19.5 0 19.5Z"
+					fill="#1C0F01"
+					fill-opacity="0.9"
+				/>
+			</svg>
+
 			<nav class="header-navbar navbar" id="navbar">
 				<div class="navbar__container container">
 					<div class="navbar__info">
 						<a href="#" class="navbar__logo">
-							<img src="./svg/kebab-logo.svg" alt="Kebab Logo" />
+							<img src="./svg/bar-u-beer-logo.svg" alt="Bar U Beer Logo" />
 						</a>
 						<div class="navbar__langs">
 							<a href="#" class="navbar__speech active">RU</a>
 							<a href="#" class="navbar__speech">HE</a>
 						</div>
 					</div>
-					<!-- /.navbar__info -->
 					<div class="navbar__mask" id="navMask"></div>
 					<!-- /.navbar__mask -->
 					<div class="navbar__wrapper">
@@ -119,7 +135,7 @@
 								event hall
 							</a>
 							<button class="navbar__offer btn-border">
-								<span class="text">Заказ онлайн</span>
+								<span class="text">Зарезервировать</span>
 							</button>
 						</div>
 					</div>
@@ -130,8 +146,8 @@
 			</nav>
 			<!-- /.header-navbar navbar -->
 			<div class="header__content">
-				<h1 class="header__title">Kebab House</h1>
-				<span class="header__big section__big">K</span>
+				<h1 class="header__title">Bar u Beer</h1>
+				<span class="header__big section__big">B</span>
 				<p class="header__text">
 					Разнообразный и богатый опыт сложившаяся структура организации
 					позволяет выполнять важные задания по разработке системы обучения
@@ -139,6 +155,7 @@
 				</p>
 			</div>
 			<a href="#about" class="next">
+				<span class="text">Листайте вниз</span>
 				<svg class="icon" viewBox="0 0 12 22">
 					<path
 						d="M6.60831 21.7479C6.60857 21.7477 6.60887 21.7475 6.60913 21.7472L11.0779 17.2568C11.4126 16.9204 11.4114 16.3763 11.075 16.0414C10.7386 15.7066 10.1944 15.7079 9.85963 16.0443L6.85938 19.0591L6.85938 0.859375C6.85938 0.384742 6.47464 -2.12153e-07 6.00001 -2.32899e-07C5.52537 -2.53646e-07 5.14063 0.384742 5.14063 0.859375L5.14063 19.0591L2.14038 16.0443C1.80557 15.7079 1.26146 15.7066 0.925057 16.0414C0.588569 16.3763 0.587409 16.9205 0.922135 17.2568L5.39088 21.7472C5.39114 21.7475 5.39144 21.7477 5.3917 21.748C5.72763 22.0846 6.2735 22.0835 6.60831 21.7479Z"
@@ -151,40 +168,52 @@
 			<section class="section about" id="about">
 				<div class="container about__content">
 					<div class="about-left">
+						<img
+							src="/images/BarBeer/about-img-left.png"
+							alt=""
+							class="bg bg-left"
+						/>
+						<div class="about__img about__img-two">
+							<img src="./images/BarBeer/about-img-1.png" alt="img" />
+						</div>
+						<div class="about__txtblock">
+							<p class="section__text about__text">
+								Разнообразный и богатый опыт сложившаяся структура организации
+								позволяет выполнять важные задания по разработке системы
+								обучения кадров, соответствует насущным потребностям.
+							</p>
+							<p class="section__text about__text">
+								Значимость этих проблем настолько очевидна, что укрепление и
+								развитие структуры в значительной степени обуславливает создание
+								направлений прогрессивного развития.
+							</p>
+							<p class="section__text about__text">
+								Разнообразный и богатый опыт сложившаяся структура организации
+								позволяет выполнять важные задания по разработке системы
+								обучения кадров, соответствует насущным.
+							</p>
+						</div>
+					</div>
+					<div class="about-right">
+						<img
+							src="./images/BarBeer/about-img-right.png"
+							alt=""
+							class="bg bg-right"
+						/>
 						<div class="section__head about__head">
 							<h2 class="section__title about__title">О нас</h2>
 							<span class="about__big section__big">О</span>
 							<span class="section__line"></span>
 						</div>
 						<div class="about__txtblock">
-							<p class="about__text section__text">
+							<p class="section__text about__text">
 								Разнообразный и богатый опыт сложившаяся структура организации
 								позволяет выполнять важные задания по разработке системы
 								обучения кадров, соответствует насущным потребностям.
 							</p>
 						</div>
 						<div class="about__img about__img-one">
-							<img src="./images/homepage/kebab-bg.png" alt="img" />
-						</div>
-					</div>
-					<div class="about-right">
-						<div class="about__img about__img-two">
-							<img src="./images/homepage/slider-img-3.png" alt="img" />
-						</div>
-						<div class="about__txtblock">
-							<p class="section__text">
-								Разнообразный и богатый опыт сложившаяся структура организации
-								позволяет выполнять важные задания по разработке системы
-								обучения кадров, соответствует насущным потребностям.
-							</p>
-							<p class="section__text">
-								Значимость этих проблем настолько очевидна, что укрепление и
-								развитие структуры в значительной степени обуславливает создание
-								направлений прогрессивного развития. Разнообразный и богатый
-								опыт сложившаяся структура организации позволяет выполнять
-								важные задания по разработке системы обучения кадров,
-								соответствует насущным.
-							</p>
+							<img src="./images/kebab/slider-img-1.png" alt="img" />
 						</div>
 					</div>
 				</div>
@@ -195,14 +224,67 @@
 				class="section menu"
 				style="background-image: url(./images/homepage/home-bg.png)"
 			>
+				<svg
+					class="menu__wave menu__wave--top"
+					viewBox="0 0 1921 92"
+					fill="none"
+				>
+					<path
+						d="M1921 71V0H0V71C0 71 295.5 51 484 51C816.5 50.5 1100 92.9109 1384 91C1651.5 91 1921 71 1921 71Z"
+						fill="white"
+					/>
+					<path
+						opacity="0.1"
+						d="M0 64.0001V71.0001C0 71.0001 249 51.0001 537 51.0001C814.5 49.1994 1052 91.0001 1431 91.0001C1697 88.1739 1921 71.0001 1921 71.0001V44.0001C1921 44.0001 1733 45.0001 1473 45.0001C868 45.0001 760.5 -3.00853e-10 483 0C195 0 0 64.0001 0 64.0001Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+					<path
+						opacity="0.1"
+						d="M0 64.004V71.004C0 71.004 284 49.5 537 51.004C828.5 52.5 1066.5 90.5039 1383 90.5039C1649.5 90.5039 1921 71.004 1921 71.004V44.004C1921 44.004 1650 69.0039 1472 68.004C1141.5 69.0039 945 22.5039 610 23.004C324 23.004 0 64.004 0 64.004Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+				</svg>
+				<svg
+					class="menu__wave menu__wave--bottom"
+					viewBox="0 0 1921 92"
+					fill="none"
+				>
+					<path
+						d="M-1 20.0627V91.0627H1920V20.0627C1920 20.0627 1624.5 40.0627 1436 40.0627C1103.5 40.5627 820 -1.84818 536 0.0627441C268.5 0.0627441 -1 20.0627 -1 20.0627Z"
+						fill="white"
+					/>
+					<path
+						opacity="0.1"
+						d="M1920 27.0626V20.0626C1920 20.0626 1671 40.0626 1383 40.0626C1105.5 41.8634 868 0.0626297 489 0.0626297C223 2.88883 -1 20.0626 -1 20.0626V47.0626C-1 47.0626 187 46.0626 447 46.0626C1052 46.0626 1159.5 91.0627 1437 91.0627C1725 91.0627 1920 27.0626 1920 27.0626Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+					<path
+						opacity="0.1"
+						d="M1920 27.0587V20.0587C1920 20.0587 1636 41.5627 1383 40.0587C1091.5 38.5627 853.5 0.558838 537 0.558838C270.5 0.558838 -1 20.0587 -1 20.0587V47.0587C-1 47.0587 270 22.0588 448 23.0587C778.5 22.0588 975 68.5588 1310 68.0587C1596 68.0587 1920 27.0587 1920 27.0587Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+				</svg>
+
 				<div class="container menu__content">
+					<img
+						src="./images/BarBeer/menu-img-left.png"
+						alt=""
+						class="bg bg-left"
+					/>
+					<img
+						src="./images/BarBeer/menu-img-right.png"
+						alt=""
+						class="bg bg-right"
+					/>
 					<div class="menu__top">
+						<span class="section__line menu__line"></span>
 						<h2 class="section__title menu__title">Меню</h2>
 						<span class="section__big menu__big">М</span>
-						<span class="menu__line"></span>
-						<button class="menu__btn btn-border">
-							<span class="text">Заказать онлайн</span>
-						</button>
+						<span class="section__line menu__line"></span>
 					</div>
 					<div class="menu__goods goods">
 						<div class="goods__item">
@@ -349,21 +431,29 @@
 				class="section gallery"
 				style="background-image: url(./images/homepage/home-bg.png)"
 			>
-				<div class="container">
+				<div class="container gallery__content">
 					<div class="gallery__top">
 						<h2 class="section__title gallery__title">Галерея</h2>
 						<span class="section__big gallery__big">Г</span>
 						<span class="gallery__line"></span>
 						<div class="gallery__action">
-							<button class="gallery__btn swiper-button-prev">
-								<svg class="icon" viewBox="0 0 18 10">
+							<button class="gallery__btn gallery__prev">
+								<svg
+									class="icon"
+									viewBox="0 0 18 10"
+									xmlns="http://www.w3.org/2000/svg"
+								>
 									<path
 										d="M0.206228 5.49771C0.20644 5.49792 0.206615 5.49817 0.206861 5.49838L3.88083 9.15463C4.15607 9.42853 4.60125 9.42751 4.87522 9.15224C5.14916 8.877 5.14811 8.43182 4.87287 8.15788L2.40616 5.70313L17.2969 5.70313C17.6852 5.70313 18 5.38834 18 5C18 4.61167 17.6852 4.29688 17.2969 4.29688L2.4062 4.29688L4.87283 1.84213C5.14807 1.56819 5.14913 1.12301 4.87519 0.84777C4.60122 0.572461 4.156 0.571512 3.88079 0.84538L0.206825 4.50163C0.206615 4.50184 0.20644 4.50209 0.206192 4.5023C-0.0691857 4.77715 -0.0683063 5.22377 0.206228 5.49771Z"
 									/>
 								</svg>
 							</button>
-							<button class="gallery__btn swiper-button-next">
-								<svg class="icon" viewBox="0 0 18 10">
+							<button class="gallery__btn gallery__next">
+								<svg
+									class="icon"
+									viewBox="0 0 18 10"
+									xmlns="http://www.w3.org/2000/svg"
+								>
 									<path
 										d="M17.7938 4.50229C17.7936 4.50208 17.7934 4.50184 17.7931 4.50163L14.1192 0.845375C13.8439 0.571473 13.3987 0.572492 13.1248 0.847765C12.8508 1.123 12.8519 1.56819 13.1271 1.84212L15.5938 4.29687L0.703124 4.29687C0.314788 4.29687 -6.94318e-07 4.61166 -7.62217e-07 5C-8.30116e-07 5.38833 0.314788 5.70312 0.703124 5.70312L15.5938 5.70312L13.1272 8.15787C12.8519 8.43181 12.8509 8.87699 13.1248 9.15223C13.3988 9.42754 13.844 9.42849 14.1192 9.15462L17.7932 5.49837C17.7934 5.49816 17.7936 5.49792 17.7938 5.49771C18.0692 5.22286 18.0683 4.77623 17.7938 4.50229Z"
 									/>
@@ -372,40 +462,268 @@
 						</div>
 					</div>
 					<div class="gallery__wrapper">
-						<div class="swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="slide">
-										<img src="./images/kebab/slider-img-1.png" alt="" />
-									</div>
-									<div class="slide">
-										<img src="./images/kebab/header-bg.png" alt="" />
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="slide">
-										<img src="./images/homepage/cappella-bg.png" alt="" />
-									</div>
-									<div class="slide">
-										<img src="./images/kebab/slider-img-3.png" alt="" />
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="slide">
-										<img src="./images/homepage/kebab-bg.png" alt="" />
-									</div>
-									<div class="slide">
-										<img src="./images/homepage/bar-u-beer-bg.png" alt="" />
-									</div>
-								</div>
+						<div class="gallery__slider">
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-1.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/cappella-bg.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-2.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-3.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-1.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/cappella-bg.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-2.png"
+									alt=""
+									class="gallery__img"
+								/>
+							</div>
+							<div class="gallery__item">
+								<img
+									src="./images/homepage/slider-img-3.png"
+									alt=""
+									class="gallery__img"
+								/>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!-- /.section gallery -->
+			<section
+				class="section reserve"
+				style="background-image: url(./images/homepage/home-bg.png)"
+			>
+				<svg
+					class="reserve__wave reserve__wave--top"
+					viewBox="0 0 1920 67"
+					fill="none"
+				>
+					<path
+						d="M1920 46.0001V0.000114441H0V46.0001C0 46.0001 242.5 25 537 26.0001C867.5 27.0003 1050.5 67.0001 1382 66.0001C1691 66.0001 1920 46.0001 1920 46.0001Z"
+						fill="white"
+					/>
+					<path
+						opacity="0.1"
+						d="M1382 66.0001C1691 66.0001 1920 46.0001 1920 46.0001V25C1920 25 1721.5 50 1412 50C1080 50 727 0 395 0C98 0 0 26 0 26V46.0001C0 46.0001 242.5 25 537 26.0001C867.5 27.0003 1050.5 67.0001 1382 66.0001Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+					<path
+						opacity="0.1"
+						d="M1382 66.0001C1691 66.0001 1920 46.0001 1920 46.0001V36C1920 36 1801.5 63 1492 63C1162.5 63 759 14.5 429 14C131.5 14 0 36 0 36L0.00732422 45.9995C1.53735 45.8672 243.433 25.0032 537 26.0001C867.5 27.0003 1050.5 67.0001 1382 66.0001Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+				</svg>
+
+				<svg
+					class="reserve__wave reserve__wave--bottom"
+					viewBox="0 0 1920 67"
+					fill="none"
+				>
+					<path
+						d="M0 20.0184V66.0184H1920V20.0184C1920 20.0184 1677.5 41.0186 1383 40.0184C1052.5 39.0183 869.5 -0.9815 538 0.0184383C229 0.0184383 0 20.0184 0 20.0184Z"
+						fill="white"
+					/>
+					<path
+						opacity="0.1"
+						d="M538 0.0184383C229 0.0184383 0 20.0184 0 20.0184V41.0186C0 41.0186 198.5 16.0186 508 16.0186C840 16.0186 1193 66.0186 1525 66.0186C1822 66.0186 1920 40.0186 1920 40.0186V20.0184C1920 20.0184 1677.5 41.0186 1383 40.0184C1052.5 39.0183 869.5 -0.9815 538 0.0184383Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+					<path
+						opacity="0.1"
+						d="M538 0.0184383C229 0.0184383 0 20.0184 0 20.0184V30.0186C0 30.0186 118.5 3.01855 428 3.01855C757.5 3.01855 1161 51.5186 1491 52.0186C1788.5 52.0186 1920 30.0186 1920 30.0186L1919.99 20.0191C1918.46 20.1513 1676.57 41.0154 1383 40.0184C1052.5 39.0183 869.5 -0.9815 538 0.0184383Z"
+						fill="#1C0F01"
+						fill-opacity="0.9"
+					/>
+				</svg>
+
+				<img
+					src="./images/BarBeer/reserve-img-left.png"
+					alt=""
+					class="bg bg-left"
+				/>
+				<img
+					src="./images/BarBeer/reserve-img-right.png"
+					alt=""
+					class="bg bg-right"
+				/>
+				<div class="container container-lg">
+					<div class="section__head reserve__top">
+						<span class="section__line reserve__line"></span>
+						<h2 class="section__title reserve__title">
+							Зарезервировать команту
+						</h2>
+						<span class="section__line reserve__line"></span>
+						<span class="section__big reserve__big">З</span>
+					</div>
+					<form action="#" class="reserve__form form">
+						<div class="form__item item">
+							<label class="item__group">
+								<span class="item__title">
+									<div class="icon">
+										<img src="./svg/man-white.svg" alt="" />
+									</div>
+									<span class="text">Ваше имя</span>
+								</span>
+								<input
+									type="text"
+									name="name"
+									class="item__input"
+									placeholder="Введите Ваше имя"
+								/>
+							</label>
+						</div>
+						<div class="form__item item">
+							<label class="item__group">
+								<span class="item__title">
+									<div class="icon">
+										<img src="./svg/phone-white.svg" alt="" />
+									</div>
+									<span class="text">Ваш email или телефон</span>
+								</span>
+								<input
+									type="text"
+									class="item__input"
+									placeholder="Ваш email или телефон"
+								/>
+							</label>
+						</div>
+						<div class="form__item item">
+							<label for="" class="item__group">
+								<span class="item__title">
+									<div class="icon">
+										<img src="./svg/people-white.svg" alt="" />
+									</div>
+									<span class="text">Количество посетителей</span>
+								</span>
+								<select class="select item__input">
+									<option data-display="Кoличество посетителей">Brown</option>
+									<option value="2">Odri</option>
+									<option value="3">Classic</option>
+									<option value="4">Retro</option>
+								</select>
+							</label>
+						</div>
+						<div class="form__item item">
+							<label for="" class="item__group">
+								<span class="item__title">
+									<div class="icon">
+										<img src="./svg/table-white.svg" alt="" />
+									</div>
+									<span class="text">Столик</span>
+								</span>
+								<select class="select item__input">
+									<option data-display="Выберите столик">Brown</option>
+									<option value="2">Odri</option>
+									<option value="3">Classic</option>
+									<option value="4">Retro</option>
+								</select>
+							</label>
+						</div>
+						<div class="form__item item">
+							<label for="" class="item__group">
+								<span class="item__title">
+									<div class="icon">
+										<img src="./svg/calendar-white.svg" alt="" />
+									</div>
+
+									<span class="text">Дата</span>
+								</span>
+								<input
+									type="date"
+									class="item__input"
+									placeholder="Выберите дату"
+								/>
+							</label>
+						</div>
+						<div class="form__item item">
+							<label for="" class="item__group">
+								<span class="item__title">
+									<div class="icon">
+										<img src="./svg/clock-white.svg" alt="" />
+									</div>
+
+									<span class="text">Время</span>
+								</span>
+								<select class="select item__input">
+									<option data-display="Выберите время">Brown</option>
+									<option value="2">Odri</option>
+									<option value="3">Classic</option>
+									<option value="4">Retro</option>
+									<option value="2">Business</option>
+									<option value="3">Lux</option>
+									<option value="4">Classic Plus</option>
+								</select>
+							</label>
+						</div>
+						<div class="form__item item check">
+							<label class="item__group checkbox">
+								<input type="checkbox" class="item__input input" />
+								<span class="text">
+									Я согласен на использование моих личных данных
+								</span>
+							</label>
+						</div>
+						<div class="form__item item button">
+							<button class="btn-border form__button">
+								<div class="text">Зарезервировать</div>
+							</button>
+						</div>
+					</form>
+				</div>
+				<!-- /.container container-lg -->
+			</section>
+			<!-- /.section reserve -->
 			<section class="section news">
-				<div class="container">
+				<div class="container news__container">
+					<img
+						src="./images/BarBeer/news-img-left.png"
+						alt=""
+						class="bg bg-left"
+					/>
+					<img
+						src="./images/BarBeer/news-img-right.png"
+						alt=""
+						class="bg bg-right"
+					/>
+
 					<div class="news__top">
 						<h2 class="section__title news__title">Новости</h2>
 						<span class="section__big news__big">Н</span>
@@ -437,11 +755,8 @@
 					</div>
 					<div class="news__wrapper">
 						<div class="news__slider">
-							<div
-								class="news__item item"
-								style="background-image: url(./images/kebab/slide-img-1.png)"
-							>
-								<div class="item__content">
+							<div class="news__item item">
+								<div class="item__description">
 									<h3 class="item__title">Очень длинный заголовок</h3>
 									<p class="item__text">
 										Разнообразный и богатый опыт сложившаяся структура
@@ -450,48 +765,20 @@
 									</p>
 									<div class="item__action">
 										<div class="item__date">
-											<span class="item__img">
-												<svg class="icon" viewBox="0 0 11 11">
-													<path
-														d="M4.00694 6.06861C4.00694 5.93082 3.89517 5.81918 3.75726 5.81918H2.88598C2.74823 5.81918 2.63644 5.93082 2.63644 6.06861V6.93977C2.63644 7.07775 2.74823 7.18943 2.88598 7.18943H3.75726C3.89517 7.18943 4.00694 7.07775 4.00694 6.93977V6.06861Z"
-													/>
-													<path
-														d="M6.18427 6.06861C6.18427 5.93082 6.07248 5.81918 5.93484 5.81918H5.06345C4.9257 5.81918 4.81391 5.93082 4.81391 6.06861V6.93977C4.81391 7.07775 4.9257 7.18943 5.06345 7.18943H5.93484C6.07248 7.18943 6.18427 7.07775 6.18427 6.93977V6.06861Z"
-													/>
-													<path
-														d="M8.36184 6.06861C8.36184 5.93082 8.25005 5.81918 8.1123 5.81918H7.24103C7.10312 5.81918 6.99135 5.93082 6.99135 6.06861V6.93977C6.99135 7.07775 7.10312 7.18943 7.24103 7.18943H8.1123C8.25005 7.18943 8.36184 7.07775 8.36184 6.93977V6.06861Z"
-													/>
-													<path
-														d="M4.00694 8.24651C4.00694 8.10849 3.89517 7.99695 3.75726 7.99695H2.88598C2.74823 7.99695 2.63644 8.10849 2.63644 8.24651V9.11752C2.63644 9.2554 2.74823 9.36706 2.88598 9.36706H3.75726C3.89517 9.36706 4.00694 9.25538 4.00694 9.11752V8.24651Z"
-													/>
-													<path
-														d="M6.18427 8.24651C6.18427 8.10849 6.07248 7.99695 5.93484 7.99695H5.06345C4.9257 7.99695 4.81391 8.10849 4.81391 8.24651V9.11752C4.81391 9.2554 4.9257 9.36706 5.06345 9.36706H5.93484C6.07248 9.36706 6.18427 9.25538 6.18427 9.11752V8.24651Z"
-													/>
-													<path
-														d="M8.36184 8.24651C8.36184 8.10849 8.25005 7.99695 8.11241 7.99695H7.24103C7.10312 7.99695 6.99135 8.10849 6.99135 8.24651V9.11752C6.99135 9.2554 7.10312 9.36706 7.24103 9.36706H8.11241C8.25005 9.36706 8.36184 9.25538 8.36184 9.11752V8.24651Z"
-													/>
-													<path
-														d="M9.91983 1.22496V2.5556C9.91983 3.15703 9.43192 3.64169 8.83058 3.64169H8.14345C7.54207 3.64169 7.0477 3.15703 7.0477 2.5556V1.22019H3.95063V2.5556C3.95063 3.15703 3.45628 3.64169 2.85498 3.64169H2.16772C1.5664 3.64169 1.07852 3.15703 1.07852 2.5556V1.22496C0.552957 1.2408 0.121094 1.67569 0.121094 2.21022V10.0084C0.121094 10.5529 0.562489 11.0002 1.10707 11.0002H9.89126C10.435 11.0002 10.8772 10.552 10.8772 10.0084V2.21022C10.8772 1.67569 10.4454 1.2408 9.91983 1.22496ZM9.60068 9.52275C9.60068 9.75809 9.40986 9.94903 9.17443 9.94903H1.80512C1.56969 9.94903 1.37887 9.75809 1.37887 9.52275V5.49473C1.37887 5.25929 1.56967 5.06836 1.80512 5.06836H9.17441C9.40984 5.06836 9.60066 5.25929 9.60066 5.49473L9.60068 9.52275Z"
-													/>
-													<path
-														d="M2.16537 2.92818H2.84504C3.05134 2.92818 3.21861 2.76115 3.21861 2.55486V0.373455C3.21861 0.167134 3.05134 0 2.84504 0H2.16537C1.95905 0 1.79181 0.167134 1.79181 0.373455V2.55486C1.79181 2.76115 1.95905 2.92818 2.16537 2.92818Z"
-													/>
-													<path
-														d="M8.13458 2.92818H8.81425C9.02041 2.92818 9.18768 2.76115 9.18768 2.55486V0.373455C9.1877 0.167134 9.02043 0 8.81425 0H8.13458C7.9283 0 7.76103 0.167134 7.76103 0.373455V2.55486C7.76103 2.76115 7.9283 2.92818 8.13458 2.92818Z"
-													/>
-												</svg>
+											<span class="icon">
+												<img src="./svg/cappella/calendar.svg" alt="" />
 											</span>
 											<span class="text">8.12.2020</span>
 										</div>
 										<a href="#" class="item__more">Детальнее</a>
 									</div>
 								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-1.png" />
+								</div>
 							</div>
-							<div
-								class="news__item item"
-								style="background-image: url(./images/kebab/slide-img-2.png)"
-							>
-								<div class="item__content">
+							<div class="news__item item">
+								<div class="item__description">
 									<h3 class="item__title">Очень длинный заголовок</h3>
 									<p class="item__text">
 										Разнообразный и богатый опыт сложившаяся структура
@@ -500,48 +787,44 @@
 									</p>
 									<div class="item__action">
 										<div class="item__date">
-											<span class="item__img">
-												<svg class="icon" viewBox="0 0 11 11">
-													<path
-														d="M4.00694 6.06861C4.00694 5.93082 3.89517 5.81918 3.75726 5.81918H2.88598C2.74823 5.81918 2.63644 5.93082 2.63644 6.06861V6.93977C2.63644 7.07775 2.74823 7.18943 2.88598 7.18943H3.75726C3.89517 7.18943 4.00694 7.07775 4.00694 6.93977V6.06861Z"
-													/>
-													<path
-														d="M6.18427 6.06861C6.18427 5.93082 6.07248 5.81918 5.93484 5.81918H5.06345C4.9257 5.81918 4.81391 5.93082 4.81391 6.06861V6.93977C4.81391 7.07775 4.9257 7.18943 5.06345 7.18943H5.93484C6.07248 7.18943 6.18427 7.07775 6.18427 6.93977V6.06861Z"
-													/>
-													<path
-														d="M8.36184 6.06861C8.36184 5.93082 8.25005 5.81918 8.1123 5.81918H7.24103C7.10312 5.81918 6.99135 5.93082 6.99135 6.06861V6.93977C6.99135 7.07775 7.10312 7.18943 7.24103 7.18943H8.1123C8.25005 7.18943 8.36184 7.07775 8.36184 6.93977V6.06861Z"
-													/>
-													<path
-														d="M4.00694 8.24651C4.00694 8.10849 3.89517 7.99695 3.75726 7.99695H2.88598C2.74823 7.99695 2.63644 8.10849 2.63644 8.24651V9.11752C2.63644 9.2554 2.74823 9.36706 2.88598 9.36706H3.75726C3.89517 9.36706 4.00694 9.25538 4.00694 9.11752V8.24651Z"
-													/>
-													<path
-														d="M6.18427 8.24651C6.18427 8.10849 6.07248 7.99695 5.93484 7.99695H5.06345C4.9257 7.99695 4.81391 8.10849 4.81391 8.24651V9.11752C4.81391 9.2554 4.9257 9.36706 5.06345 9.36706H5.93484C6.07248 9.36706 6.18427 9.25538 6.18427 9.11752V8.24651Z"
-													/>
-													<path
-														d="M8.36184 8.24651C8.36184 8.10849 8.25005 7.99695 8.11241 7.99695H7.24103C7.10312 7.99695 6.99135 8.10849 6.99135 8.24651V9.11752C6.99135 9.2554 7.10312 9.36706 7.24103 9.36706H8.11241C8.25005 9.36706 8.36184 9.25538 8.36184 9.11752V8.24651Z"
-													/>
-													<path
-														d="M9.91983 1.22496V2.5556C9.91983 3.15703 9.43192 3.64169 8.83058 3.64169H8.14345C7.54207 3.64169 7.0477 3.15703 7.0477 2.5556V1.22019H3.95063V2.5556C3.95063 3.15703 3.45628 3.64169 2.85498 3.64169H2.16772C1.5664 3.64169 1.07852 3.15703 1.07852 2.5556V1.22496C0.552957 1.2408 0.121094 1.67569 0.121094 2.21022V10.0084C0.121094 10.5529 0.562489 11.0002 1.10707 11.0002H9.89126C10.435 11.0002 10.8772 10.552 10.8772 10.0084V2.21022C10.8772 1.67569 10.4454 1.2408 9.91983 1.22496ZM9.60068 9.52275C9.60068 9.75809 9.40986 9.94903 9.17443 9.94903H1.80512C1.56969 9.94903 1.37887 9.75809 1.37887 9.52275V5.49473C1.37887 5.25929 1.56967 5.06836 1.80512 5.06836H9.17441C9.40984 5.06836 9.60066 5.25929 9.60066 5.49473L9.60068 9.52275Z"
-													/>
-													<path
-														d="M2.16537 2.92818H2.84504C3.05134 2.92818 3.21861 2.76115 3.21861 2.55486V0.373455C3.21861 0.167134 3.05134 0 2.84504 0H2.16537C1.95905 0 1.79181 0.167134 1.79181 0.373455V2.55486C1.79181 2.76115 1.95905 2.92818 2.16537 2.92818Z"
-													/>
-													<path
-														d="M8.13458 2.92818H8.81425C9.02041 2.92818 9.18768 2.76115 9.18768 2.55486V0.373455C9.1877 0.167134 9.02043 0 8.81425 0H8.13458C7.9283 0 7.76103 0.167134 7.76103 0.373455V2.55486C7.76103 2.76115 7.9283 2.92818 8.13458 2.92818Z"
-													/>
-												</svg>
+											<img
+												class="icon"
+												alt=""
+												src="./svg/cappella/calendar.svg"
+											/>
+											<span class="text">8.12.2020</span>
+										</div>
+										<a href="#" class="item__more">Детальнее</a>
+									</div>
+								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-2.png" />
+								</div>
+							</div>
+							<div class="news__item item">
+								<div class="item__description">
+									<h3 class="item__title">Очень длинный заголовок</h3>
+									<p class="item__text">
+										Разнообразный и богатый опыт сложившаяся структура
+										организации позволяет выполнять важные задания по разработке
+										...
+									</p>
+									<div class="item__action">
+										<div class="item__date">
+											<span class="icon">
+												<img src="./svg/cappella/calendar.svg" alt="" />
 											</span>
 											<span class="text">8.12.2020</span>
 										</div>
 										<a href="#" class="item__more">Детальнее</a>
 									</div>
 								</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-1.png" />
+								</div>
 							</div>
-							<div
-								class="news__item item"
-								style="background-image: url(./images/kebab/slide-img-1.png)"
-							>
-								<div class="item__content">
+							<div class="news__item item">
+								<div class="item__description">
 									<h3 class="item__title">Очень длинный заголовок</h3>
 									<p class="item__text">
 										Разнообразный и богатый опыт сложившаяся структура
@@ -550,91 +833,18 @@
 									</p>
 									<div class="item__action">
 										<div class="item__date">
-											<span class="item__img">
-												<svg class="icon" viewBox="0 0 11 11">
-													<path
-														d="M4.00694 6.06861C4.00694 5.93082 3.89517 5.81918 3.75726 5.81918H2.88598C2.74823 5.81918 2.63644 5.93082 2.63644 6.06861V6.93977C2.63644 7.07775 2.74823 7.18943 2.88598 7.18943H3.75726C3.89517 7.18943 4.00694 7.07775 4.00694 6.93977V6.06861Z"
-													/>
-													<path
-														d="M6.18427 6.06861C6.18427 5.93082 6.07248 5.81918 5.93484 5.81918H5.06345C4.9257 5.81918 4.81391 5.93082 4.81391 6.06861V6.93977C4.81391 7.07775 4.9257 7.18943 5.06345 7.18943H5.93484C6.07248 7.18943 6.18427 7.07775 6.18427 6.93977V6.06861Z"
-													/>
-													<path
-														d="M8.36184 6.06861C8.36184 5.93082 8.25005 5.81918 8.1123 5.81918H7.24103C7.10312 5.81918 6.99135 5.93082 6.99135 6.06861V6.93977C6.99135 7.07775 7.10312 7.18943 7.24103 7.18943H8.1123C8.25005 7.18943 8.36184 7.07775 8.36184 6.93977V6.06861Z"
-													/>
-													<path
-														d="M4.00694 8.24651C4.00694 8.10849 3.89517 7.99695 3.75726 7.99695H2.88598C2.74823 7.99695 2.63644 8.10849 2.63644 8.24651V9.11752C2.63644 9.2554 2.74823 9.36706 2.88598 9.36706H3.75726C3.89517 9.36706 4.00694 9.25538 4.00694 9.11752V8.24651Z"
-													/>
-													<path
-														d="M6.18427 8.24651C6.18427 8.10849 6.07248 7.99695 5.93484 7.99695H5.06345C4.9257 7.99695 4.81391 8.10849 4.81391 8.24651V9.11752C4.81391 9.2554 4.9257 9.36706 5.06345 9.36706H5.93484C6.07248 9.36706 6.18427 9.25538 6.18427 9.11752V8.24651Z"
-													/>
-													<path
-														d="M8.36184 8.24651C8.36184 8.10849 8.25005 7.99695 8.11241 7.99695H7.24103C7.10312 7.99695 6.99135 8.10849 6.99135 8.24651V9.11752C6.99135 9.2554 7.10312 9.36706 7.24103 9.36706H8.11241C8.25005 9.36706 8.36184 9.25538 8.36184 9.11752V8.24651Z"
-													/>
-													<path
-														d="M9.91983 1.22496V2.5556C9.91983 3.15703 9.43192 3.64169 8.83058 3.64169H8.14345C7.54207 3.64169 7.0477 3.15703 7.0477 2.5556V1.22019H3.95063V2.5556C3.95063 3.15703 3.45628 3.64169 2.85498 3.64169H2.16772C1.5664 3.64169 1.07852 3.15703 1.07852 2.5556V1.22496C0.552957 1.2408 0.121094 1.67569 0.121094 2.21022V10.0084C0.121094 10.5529 0.562489 11.0002 1.10707 11.0002H9.89126C10.435 11.0002 10.8772 10.552 10.8772 10.0084V2.21022C10.8772 1.67569 10.4454 1.2408 9.91983 1.22496ZM9.60068 9.52275C9.60068 9.75809 9.40986 9.94903 9.17443 9.94903H1.80512C1.56969 9.94903 1.37887 9.75809 1.37887 9.52275V5.49473C1.37887 5.25929 1.56967 5.06836 1.80512 5.06836H9.17441C9.40984 5.06836 9.60066 5.25929 9.60066 5.49473L9.60068 9.52275Z"
-													/>
-													<path
-														d="M2.16537 2.92818H2.84504C3.05134 2.92818 3.21861 2.76115 3.21861 2.55486V0.373455C3.21861 0.167134 3.05134 0 2.84504 0H2.16537C1.95905 0 1.79181 0.167134 1.79181 0.373455V2.55486C1.79181 2.76115 1.95905 2.92818 2.16537 2.92818Z"
-													/>
-													<path
-														d="M8.13458 2.92818H8.81425C9.02041 2.92818 9.18768 2.76115 9.18768 2.55486V0.373455C9.1877 0.167134 9.02043 0 8.81425 0H8.13458C7.9283 0 7.76103 0.167134 7.76103 0.373455V2.55486C7.76103 2.76115 7.9283 2.92818 8.13458 2.92818Z"
-													/>
-												</svg>
-											</span>
+											<img
+												class="icon"
+												alt=""
+												src="./svg/cappella/calendar.svg"
+											/>
 											<span class="text">8.12.2020</span>
 										</div>
 										<a href="#" class="item__more">Детальнее</a>
 									</div>
 								</div>
-							</div>
-							<div
-								class="news__item item"
-								style="background-image: url(./images/kebab/slide-img-2.png)"
-							>
-								<div class="item__content">
-									<h3 class="item__title">Очень длинный заголовок</h3>
-									<p class="item__text">
-										Разнообразный и богатый опыт сложившаяся структура
-										организации позволяет выполнять важные задания по разработке
-										...
-									</p>
-									<div class="item__action">
-										<div class="item__date">
-											<span class="item__img">
-												<svg class="icon" viewBox="0 0 11 11">
-													<path
-														d="M4.00694 6.06861C4.00694 5.93082 3.89517 5.81918 3.75726 5.81918H2.88598C2.74823 5.81918 2.63644 5.93082 2.63644 6.06861V6.93977C2.63644 7.07775 2.74823 7.18943 2.88598 7.18943H3.75726C3.89517 7.18943 4.00694 7.07775 4.00694 6.93977V6.06861Z"
-													/>
-													<path
-														d="M6.18427 6.06861C6.18427 5.93082 6.07248 5.81918 5.93484 5.81918H5.06345C4.9257 5.81918 4.81391 5.93082 4.81391 6.06861V6.93977C4.81391 7.07775 4.9257 7.18943 5.06345 7.18943H5.93484C6.07248 7.18943 6.18427 7.07775 6.18427 6.93977V6.06861Z"
-													/>
-													<path
-														d="M8.36184 6.06861C8.36184 5.93082 8.25005 5.81918 8.1123 5.81918H7.24103C7.10312 5.81918 6.99135 5.93082 6.99135 6.06861V6.93977C6.99135 7.07775 7.10312 7.18943 7.24103 7.18943H8.1123C8.25005 7.18943 8.36184 7.07775 8.36184 6.93977V6.06861Z"
-													/>
-													<path
-														d="M4.00694 8.24651C4.00694 8.10849 3.89517 7.99695 3.75726 7.99695H2.88598C2.74823 7.99695 2.63644 8.10849 2.63644 8.24651V9.11752C2.63644 9.2554 2.74823 9.36706 2.88598 9.36706H3.75726C3.89517 9.36706 4.00694 9.25538 4.00694 9.11752V8.24651Z"
-													/>
-													<path
-														d="M6.18427 8.24651C6.18427 8.10849 6.07248 7.99695 5.93484 7.99695H5.06345C4.9257 7.99695 4.81391 8.10849 4.81391 8.24651V9.11752C4.81391 9.2554 4.9257 9.36706 5.06345 9.36706H5.93484C6.07248 9.36706 6.18427 9.25538 6.18427 9.11752V8.24651Z"
-													/>
-													<path
-														d="M8.36184 8.24651C8.36184 8.10849 8.25005 7.99695 8.11241 7.99695H7.24103C7.10312 7.99695 6.99135 8.10849 6.99135 8.24651V9.11752C6.99135 9.2554 7.10312 9.36706 7.24103 9.36706H8.11241C8.25005 9.36706 8.36184 9.25538 8.36184 9.11752V8.24651Z"
-													/>
-													<path
-														d="M9.91983 1.22496V2.5556C9.91983 3.15703 9.43192 3.64169 8.83058 3.64169H8.14345C7.54207 3.64169 7.0477 3.15703 7.0477 2.5556V1.22019H3.95063V2.5556C3.95063 3.15703 3.45628 3.64169 2.85498 3.64169H2.16772C1.5664 3.64169 1.07852 3.15703 1.07852 2.5556V1.22496C0.552957 1.2408 0.121094 1.67569 0.121094 2.21022V10.0084C0.121094 10.5529 0.562489 11.0002 1.10707 11.0002H9.89126C10.435 11.0002 10.8772 10.552 10.8772 10.0084V2.21022C10.8772 1.67569 10.4454 1.2408 9.91983 1.22496ZM9.60068 9.52275C9.60068 9.75809 9.40986 9.94903 9.17443 9.94903H1.80512C1.56969 9.94903 1.37887 9.75809 1.37887 9.52275V5.49473C1.37887 5.25929 1.56967 5.06836 1.80512 5.06836H9.17441C9.40984 5.06836 9.60066 5.25929 9.60066 5.49473L9.60068 9.52275Z"
-													/>
-													<path
-														d="M2.16537 2.92818H2.84504C3.05134 2.92818 3.21861 2.76115 3.21861 2.55486V0.373455C3.21861 0.167134 3.05134 0 2.84504 0H2.16537C1.95905 0 1.79181 0.167134 1.79181 0.373455V2.55486C1.79181 2.76115 1.95905 2.92818 2.16537 2.92818Z"
-													/>
-													<path
-														d="M8.13458 2.92818H8.81425C9.02041 2.92818 9.18768 2.76115 9.18768 2.55486V0.373455C9.1877 0.167134 9.02043 0 8.81425 0H8.13458C7.9283 0 7.76103 0.167134 7.76103 0.373455V2.55486C7.76103 2.76115 7.9283 2.92818 8.13458 2.92818Z"
-													/>
-												</svg>
-											</span>
-											<span class="text">8.12.2020</span>
-										</div>
-										<a href="#" class="item__more">Детальнее</a>
-									</div>
+								<div class="item__img">
+									<img alt="" src="./images/cappella/news-img-2.png" />
 								</div>
 							</div>
 						</div>
@@ -642,75 +852,137 @@
 				</div>
 			</section>
 			<!-- /.section news -->
-			<section class="section contacts" id="contacts">
-				<div
-					class="contacts__container"
-					style="background-image: url(./images/kebab/contacts-map-bg.png)"
-				>
+			<section
+				id="contacts"
+				class="section contacts"
+				style="background: url('./images/homepage/home-bg.png')"
+			>
+				<svg class="contacts__wave" viewBox="0 0 1920 69" fill="none">
+					<path
+						d="M0 0V48C0 48 269.5 29.2048 536 28C866.749 26.5048 1051.25 69.4425 1382 68C1649.5 68 1920 48 1920 48V0H0Z"
+						fill="white"
+					/>
+					<path
+						opacity="0.1"
+						d="M536 28.0001C269.5 29.2049 0 48.0001 0 48.0001V24C0 24 105.5 0 373 0C702.5 3.94139e-10 1040.5 51 1372 51C1636.5 51 1920 17 1920 17V48.0001C1920 48.0001 1649.5 68.0001 1382 68.0001C1051.25 69.4426 866.749 26.5048 536 28.0001Z"
+						fill="#1C0F01"
+					/>
+					<path
+						opacity="0.1"
+						d="M536 28.0006C269.5 29.2054 0 48.0006 0 48.0006V37C0 37 268.5 16.9995 536 17C867 17.0006 1052.5 57 1381 57C1649 57 1920 37 1920 37V48.0006C1920 48.0006 1649.5 68.0006 1382 68.0006C1051.25 69.4431 866.749 26.5053 536 28.0006Z"
+						fill="#1C0F01"
+					/>
+				</svg>
+
+				<div class="contacts__container">
 					<div class="contacts__top">
-						<div class="section__head contacts__head">
-							<h2 class="section__title contacts__title">Контакты</h2>
-							<span class="section__big contacts__big">К</span>
+						<div class="section__head">
+							<h2 class="contacts__title">Контакты</h2>
+							<span class="contacts__big">К</span>
 							<span class="section__line contacts__line"></span>
 						</div>
-						<div class="contacts__block">
-							<div class="contacts__item item">
-								<svg class="icon" viewBox="0 0 18 18">
-									<path
-										d="M9 0C4.03746 0 0 4.03746 0 9C0 13.9625 4.03746 18 9 18C13.9625 18 18 13.9625 18 9C18 4.03746 13.9625 0 9 0ZM11.0171 12.6079L7.87497 9.46578V4.49997H10.125V8.53415L12.6079 11.017C12.6079 11.017 11.0171 12.6079 11.0171 12.6079Z"
-									/>
-								</svg>
-								<div class="item__info">
-									<h5 class="item__title">Рабочее время:</h5>
-									<span class="item__description">Mo - Su: 9 AM - 12 PM</span>
+						<form action="#" class="contacts__form form">
+							<label for="formName" class="form__label">
+								<span class="form__title">Ваше имя</span>
+								<input
+									type="text"
+									class="form__input form__input-name"
+									placeholder="Введите Ваше имя"
+									id="formName"
+								/>
+							</label>
+							<label for="formSurname" class="form__label">
+								<span class="form__title">Ваша фамилия</span>
+								<input
+									type="text"
+									class="form__input form__input-surname"
+									placeholder="Введите Вашу фамилию"
+									id="formSurname"
+								/>
+							</label>
+							<label for="formPhone" class="form__label">
+								<span class="form__title">Ваш телефон</span>
+								<input
+									type="tel"
+									class="form__input form__input-phone"
+									placeholder="Введите Ваш телефон"
+									id="formPhone"
+								/>
+							</label>
+							<label for="formEmail" class="form__label">
+								<span class="form__title">Ваш E-mail</span>
+								<input
+									type="email"
+									class="form__input form__input-email"
+									placeholder="Введите Ваш e-mail"
+									id="formEmail"
+								/>
+							</label>
+							<button class="btn-border form__submit">
+								<span class="text">Отправить</span>
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="contacts__map map">
+					<div class="map__img" id="baruBeerMap"></div>
+					<div class="contacts__window window">
+						<div
+							class="window__wrapper"
+							style="background-image: url(./images/homepage/home-bg.png)"
+						>
+							<div class="window__block window__address">
+								<div class="window__icon">
+									<svg class="icon" viewBox="0 0 14 18">
+										<path
+											d="M7.22692 0.00375168C3.57149 -0.119438 0.56958 2.80709 0.56958 6.43469C0.56958 10.5516 4.52042 13.5394 6.73486 17.8362C6.84729 18.0544 7.16135 18.0547 7.27416 17.8365C9.27745 13.9703 12.7013 11.3777 13.3358 7.65299C13.9928 3.79863 11.1346 0.135493 7.22692 0.00375168ZM7.0042 9.80519C5.14275 9.80519 3.6337 8.2961 3.6337 6.43469C3.6337 4.57328 5.14278 3.06419 7.0042 3.06419C8.86564 3.06419 10.3747 4.57328 10.3747 6.43469C10.3747 8.2961 8.86564 9.80519 7.0042 9.80519Z"
+										/>
+									</svg>
 								</div>
-							</div>
-							<div class="contacts__item item">
-								<svg class="icon" viewBox="0 0 14 18">
-									<path
-										d="M7.22668 0.00375168C3.57125 -0.119438 0.569336 2.80709 0.569336 6.43469C0.569336 10.5516 4.52018 13.5394 6.73462 17.8362C6.84705 18.0544 7.1611 18.0547 7.27392 17.8365C9.2772 13.9703 12.7011 11.3777 13.3356 7.65299C13.9926 3.79863 11.1343 0.135493 7.22668 0.00375168ZM7.00395 9.80519C5.14251 9.80519 3.63345 8.2961 3.63345 6.43469C3.63345 4.57328 5.14254 3.06419 7.00395 3.06419C8.8654 3.06419 10.3745 4.57328 10.3745 6.43469C10.3745 8.2961 8.8654 9.80519 7.00395 9.80519Z"
-									/>
-								</svg>
-								<div class="item__info">
-									<h5 class="item__title">Адрес:</h5>
-									<span class="item__description">
+								<div class="window__info">
+									<span class="window__title">Адрес:</span>
+									<a href="#" class="window__val">
 										Derech HaMaccabim 8 Rishon LeTsiyon
-									</span>
+									</a>
 								</div>
 							</div>
-							<div class="contacts__item item">
-								<svg class="icon" viewBox="0 0 18 18">
-									<path
-										d="M7.45363 10.5465C5.73556 8.82843 5.34763 7.11036 5.26011 6.42201C5.23566 6.23168 5.30115 6.04081 5.43732 5.9056L6.82766 4.51587C7.03219 4.31148 7.06848 3.99294 6.91518 3.74777L4.70149 0.310393C4.53189 0.0389184 4.18366 -0.0590595 3.89739 0.0841516L0.343629 1.75784C0.11213 1.87183 -0.0240347 2.1178 0.00224947 2.3745C0.188456 4.14346 0.959663 8.49201 5.23311 12.7658C9.50656 17.0395 13.8545 17.8104 15.6244 17.9966C15.8811 18.0229 16.1271 17.8868 16.241 17.6553L17.9147 14.1015C18.0574 13.8158 17.9601 13.4685 17.6897 13.2986L14.2524 11.0856C14.0073 10.9321 13.6888 10.9681 13.4843 11.1725L12.0945 12.5628C11.9593 12.699 11.7684 12.7645 11.5781 12.74C10.8898 12.6525 9.1717 12.2646 7.45363 10.5465Z"
-									/>
-									<path
-										d="M14.2756 9.62094C13.9328 9.62094 13.6549 9.34305 13.6549 9.00025C13.652 6.43047 11.5695 4.34798 8.99973 4.34508C8.65693 4.34508 8.37904 4.06718 8.37904 3.72439C8.37904 3.38159 8.65693 3.1037 8.99973 3.1037C12.2548 3.10729 14.8927 5.74516 14.8963 9.00025C14.8963 9.34305 14.6184 9.62094 14.2756 9.62094Z"
-									/>
-									<path
-										d="M17.379 9.62069C17.0362 9.62069 16.7584 9.3428 16.7584 9C16.7536 4.71702 13.2827 1.24617 8.99973 1.24138C8.65693 1.24138 8.37904 0.963487 8.37904 0.62069C8.37904 0.277892 8.65693 0 8.99973 0C13.968 0.0054732 17.9943 4.03171 17.9997 9C17.9997 9.16462 17.9343 9.32249 17.8179 9.43889C17.7015 9.5553 17.5437 9.62069 17.379 9.62069Z"
-									/>
-								</svg>
-								<div class="item__info">
-									<h5 class="item__title">Телефон:</h5>
-									<span class="item__description">03-755-05-55</span>
+							<div class="window__block window__phone">
+								<div class="window__icon">
+									<svg class="icon" viewBox="0 0 18 18">
+										<path
+											d="M7.45387 10.5465C5.7358 8.82843 5.34787 7.11036 5.26036 6.42201C5.2359 6.23168 5.3014 6.04081 5.43756 5.9056L6.82791 4.51587C7.03243 4.31148 7.06872 3.99294 6.91542 3.74777L4.70174 0.310393C4.53214 0.0389184 4.18391 -0.0590595 3.89763 0.0841516L0.343873 1.75784C0.112374 1.87183 -0.0237905 2.1178 0.00249361 2.3745C0.188701 4.14346 0.959907 8.49201 5.23336 12.7658C9.5068 17.0395 13.8547 17.8104 15.6246 17.9966C15.8813 18.0229 16.1273 17.8868 16.2413 17.6553L17.915 14.1015C18.0577 13.8158 17.9603 13.4685 17.69 13.2986L14.2526 11.0856C14.0076 10.9321 13.689 10.9681 13.4845 11.1725L12.0948 12.5628C11.9596 12.699 11.7687 12.7645 11.5784 12.74C10.89 12.6525 9.17194 12.2646 7.45387 10.5465Z"
+										/>
+										<path
+											d="M14.2758 9.62094C13.933 9.62094 13.6551 9.34305 13.6551 9.00025C13.6522 6.43047 11.5698 4.34798 8.99998 4.34508C8.65718 4.34508 8.37929 4.06718 8.37929 3.72439C8.37929 3.38159 8.65718 3.1037 8.99998 3.1037C12.2551 3.10729 14.8929 5.74516 14.8965 9.00025C14.8965 9.34305 14.6186 9.62094 14.2758 9.62094Z"
+										/>
+										<path
+											d="M17.3793 9.62069C17.0365 9.62069 16.7586 9.3428 16.7586 9C16.7538 4.71702 13.283 1.24617 8.99998 1.24138C8.65718 1.24138 8.37929 0.963487 8.37929 0.62069C8.37929 0.277892 8.65718 0 8.99998 0C13.9683 0.0054732 17.9945 4.03171 18 9C18 9.16462 17.9346 9.32249 17.8182 9.43889C17.7018 9.5553 17.5439 9.62069 17.3793 9.62069Z"
+										/>
+									</svg>
+								</div>
+								<div class="window__info">
+									<span class="window__title">Телефон:</span>
+									<a href="#" class="window__val">055-559-3121</a>
 								</div>
 							</div>
 						</div>
-						<button class="btn-border contacts__button">
-							<span class="text">Заказать звонок</span>
-						</button>
 					</div>
 				</div>
-				<div class="contacts__map map">
-					<div class="map__img" id="kebabMap"></div>
+				<div class="link">
+					<a href="#" class="link-btn">
+						<svg viewBox="0 0 160 50" class="link-bg">
+							<path
+								d="M79.9999 0C105 0 125 50 160 50H-6.10352e-05C35 50 55 0 79.9999 0Z"
+							/>
+						</svg>
+						<svg class="link-icon icon" viewBox="0 0 24 14">
+							<path
+								d="M11.3415 1.11392L0.271522 12.2146C-0.0909608 12.5783 -0.0903515 13.1672 0.273397 13.5303C0.637099 13.8931 1.22627 13.8921 1.58903 13.5284L12.0002 3.08843L22.4113 13.5288C22.7741 13.8925 23.3629 13.8934 23.7266 13.5306C23.909 13.3486 24.0001 13.1102 24.0001 12.8717C24.0001 12.6339 23.9096 12.3964 23.7285 12.2147L12.6588 1.11392C12.4845 0.938749 12.2473 0.840452 12.0002 0.840452C11.753 0.840452 11.5161 0.93903 11.3415 1.11392Z"
+							/>
+						</svg>
+					</a>
 				</div>
-				<a href="#" class="next">
-					<svg class="icon" viewBox="0 0 12 22">
-						<path
-							d="M5.39169 0.252053C5.39143 0.252311 5.39113 0.252526 5.39087 0.252827L0.922124 4.74323C0.587355 5.07964 0.588601 5.62375 0.925046 5.9586C1.26145 6.29342 1.80556 6.29213 2.14037 5.95572L5.14062 2.94087L5.14062 21.1406C5.14062 21.6153 5.52536 22 5.99999 22C6.47463 22 6.85937 21.6153 6.85937 21.1406L6.85937 2.94091L9.85962 5.95568C10.1944 6.29209 10.7385 6.29337 11.0749 5.95856C11.4114 5.62371 11.4126 5.07955 11.0779 4.74319L6.60912 0.252784C6.60886 0.252526 6.60856 0.252311 6.6083 0.25201C6.27238 -0.0845641 5.7265 -0.0834896 5.39169 0.252053Z"
-						/>
-					</svg>
-				</a>
 			</section>
 			<!-- /.section contacts -->
 		</main>
@@ -722,7 +994,7 @@
 			<div class="container footer__wrapper">
 				<nav class="footer-navbar navbar">
 					<a href="#" class="navbar__logo">
-						<img src="./svg/kebab-logo.svg" alt="A Cappella Logo" />
+						<img src="./svg/bar-u-beer-logo.png" alt="A Cappella Logo" />
 					</a>
 					<ul class="navbar__list">
 						<li class="navbar__item">
@@ -767,7 +1039,7 @@
 							</svg>
 						</a>
 					</div>
-					<a href="/index.html" class="navbar__btn btn-normal">
+					<button class="navbar__btn btn-normal">
 						<svg class="icon" viewBox="0 0 13 13">
 							<path
 								d="M12.7817 5.81154L6.949 0.49684C6.69298 0.263526 6.30692 0.263552 6.05101 0.496815L0.218309 5.81157C0.0132296 5.99845 -0.0545125 6.28637 0.0456788 6.54508C0.145895 6.80378 0.389899 6.97093 0.667342 6.97093H1.59892V12.2959C1.59892 12.507 1.77011 12.6782 1.98123 12.6782H5.17826C5.38938 12.6782 5.56056 12.507 5.56056 12.2959V9.06273H7.43952V12.2959C7.43952 12.507 7.6107 12.6782 7.82182 12.6782H11.0187C11.2298 12.6782 11.401 12.507 11.401 12.2959V6.97093H12.3328C12.6102 6.97093 12.8542 6.80376 12.9544 6.54508C13.0545 6.28635 12.9867 5.99845 12.7817 5.81154Z"
@@ -777,7 +1049,7 @@
 							/>
 						</svg>
 						<span class="text">event hall</span>
-					</a>
+					</button>
 				</nav>
 				<div class="footer__bottom">
 					<span class="footer__copy">

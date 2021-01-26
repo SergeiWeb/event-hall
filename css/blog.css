@@ -264,10 +264,6 @@ img {
   margin-bottom: 0;
 }
 
-.section__text.rtl {
-  text-align: right;
-}
-
 .header .navbar__info {
   z-index: 88;
 }
