@@ -47,6 +47,14 @@
 }
 
 @font-face {
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/Rubik-Bold.ttf") format("ttf"), url("../fonts/Rubik-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Tinos";
   font-display: swap;
   src: url("../fonts/Tinos-Regular.ttf") format("ttf"), url("../fonts/Tinos-Regular.ttf") format("ttf");
@@ -2631,6 +2639,130 @@ img {
   font-weight: 400;
 }
 
+.datepicker {
+  width: 300px;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 9px 25px rgba(4, 3, 37, 0.14) !important;
+          box-shadow: 0px 9px 25px rgba(4, 3, 37, 0.14) !important;
+}
+
+.datepicker--pointer {
+  display: none !important;
+}
+
+.datepicker--nav {
+  padding: 15px 10px;
+  border: none;
+}
+
+.datepicker--nav-title {
+  color: #313643;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  border-radius: 0;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+.datepicker--nav-title i {
+  color: #313643;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+.datepicker--nav-title:hover {
+  background: rgba(236, 237, 240, 0.5);
+}
+
+.datepicker--nav-action {
+  border-radius: 0;
+}
+
+.datepicker--nav-action path {
+  stroke: #666666;
+}
+
+.datepicker--nav-action:hover {
+  background: rgba(236, 237, 240, 0.5);
+}
+
+.datepicker--content {
+  padding: 0 10px 10px;
+}
+
+.datepicker--day-name {
+  color: #313643;
+  font-size: 0.874rem;
+  line-height: 1.25rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+.datepicker--days-names {
+  margin: 0 10px 10px;
+}
+
+.datepicker--cell {
+  color: #313643;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.32px;
+  border-radius: 0 !important;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+}
+
+.datepicker--cell.-focus- {
+  background: #ffffff;
+  border: 1px solid #313643;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+
+.datepicker--cell.-selected- {
+  color: #ffffff;
+  background: #313643;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+
+.datepicker--cell.-selected-.-focus- {
+  background: #313643;
+}
+
+.datepicker--cell.-selected-.-current- {
+  color: #ffffff;
+  background: #313643;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+
+.datepicker--cell.-current- {
+  color: rgba(49, 54, 67, 0.6);
+  border: 1px solid rgba(49, 54, 67, 0.2);
+}
+
+.datepicker--time {
+  padding: 10px;
+}
+
+.datepicker--time-current-hours:after {
+  border-radius: 0;
+  background: rgba(236, 237, 240, 0.5);
+}
+
+.datepicker--time-row input[type='range']::-webkit-slider-thumb {
+  background: #ecedf0;
+}
+
+.datepicker--time-row input[type='range']:focus::-webkit-slider-thumb {
+  background: #313643;
+  border-color: rgba(49, 54, 67, 0.5);
+}
+
 [dir='rtl'] .header .navbar__langs {
   margin-left: auto;
   margin-right: 30px;
@@ -2858,12 +2990,18 @@ img {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .datepicker {
+    width: 240px;
+  }
 }
 
 @media screen and (max-width: 770px) {
   .reserve {
     background-position: right bottom 12%;
     background-size: 300%;
+  }
+  .datepicker {
+    width: 210px;
   }
 }
 
@@ -2987,12 +3125,18 @@ img {
   .contacts__window {
     top: 40px;
   }
+  .datepicker {
+    width: 280px;
+  }
 }
 
 @media screen and (max-width: 570px) {
   .tariffs__wrapper .description__top {
     -ms-grid-columns: 27% 35% 38%;
         grid-template-columns: 27% 35% 38%;
+  }
+  .datepicker {
+    width: 250px;
   }
 }
 
@@ -3166,6 +3310,9 @@ img {
             order: 0;
     margin: 25px 0;
   }
+  .datepicker {
+    width: 94vw;
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -3328,9 +3475,6 @@ img {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .reserve .form__button {
-    padding: 15px 30px;
-  }
   .contacts__container {
     padding: 35px 1rem;
   }
@@ -3446,6 +3590,9 @@ img {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+  .datepicker {
+    width: 91vw;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -3473,6 +3620,9 @@ img {
   .footer .navbar__btn {
     margin-left: 0;
     padding: 17px 20px;
+  }
+  .datepicker {
+    width: 90vw;
   }
 }
 /*# sourceMappingURL=rooms.css.map */
