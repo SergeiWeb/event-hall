@@ -27,8 +27,6 @@ const myFullpage = new fullpage('#fullpage', {
 			? document.querySelector('#contactsLink').classList.add('active')
 			: document.querySelector('#contactsLink').classList.remove('active')
 
-		console.log(index.index)
-
 		if (index.index == 1) {
 			fullpage_api.setAllowScrolling(false, 'down')
 		} else {
@@ -96,8 +94,8 @@ $('.slider-content')
 		slidesToShow: 1,
 		prevArrow: '.our__prev',
 		nextArrow: '.our__next',
-		cssEase: 'ease',
-		speed: 550,
+		cssEase: 'linear',
+		speed: 500,
 	})
 	.on('wheel', function (event) {
 		event.preventDefault()
@@ -119,7 +117,7 @@ $('.slider-content')
 		for (const item of slick.$slides) {
 			if (item.classList.contains('slick-current')) {
 				document.querySelector('.home__block').style.backgroundImage =
-					`url('${item.getAttribute('data-bg')}')` || 'none'
+					`url('${item.getAttribute('data-bg')}')` || '#313643'
 			}
 		}
 
@@ -139,6 +137,13 @@ $('.slider-content')
 		}
 	})
 	.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		for (const item of slick.$slides) {
+			if (item.classList.contains('slick-current')) {
+				document.querySelector('.home__block').style.backgroundImage =
+					`url('${item.getAttribute('data-bg')}')` || '#313643'
+			}
+		}
+
 		if (slick.$slides[0].classList.contains('slick-active')) {
 			fullpage_api.setAllowScrolling(true, 'up')
 			fullpage_api.setAllowScrolling(false, 'down')
