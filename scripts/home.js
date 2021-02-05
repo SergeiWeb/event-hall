@@ -46,7 +46,7 @@ const myFullpage = new fullpage('#fullpage', {
 	},
 })
 
-$(document).on('click', homeNext, function () {
+$(document).on('click', '.home__next', function () {
 	fullpage_api.moveSectionDown()
 })
 
