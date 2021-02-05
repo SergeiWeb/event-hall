@@ -87,7 +87,7 @@ $('.slider-content')
 		verticalSwiping: true,
 		infinite: false,
 		draggable: false,
-		swipe: false,
+		swipe: true,
 		slidesToShow: 1,
 		prevArrow: '.our__prev',
 		nextArrow: '.our__next',
