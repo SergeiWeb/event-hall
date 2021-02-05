@@ -2,6 +2,9 @@ const homeItems = document.querySelectorAll('.home__item')
 const burgerBtn = document.querySelector('#burgerBtn')
 const navbar = document.querySelector('#navbar')
 
+const scrollTopBtn = document.querySelector('#scrollTopBtn')
+const homeNext = document.querySelector('.home__next')
+
 let tooltipArr = []
 
 for (const item of homeItems) {
@@ -35,13 +38,15 @@ const myFullpage = new fullpage('#fullpage', {
 
 		if (index.isLast) {
 			fullpage_api.setAllowScrolling(true, 'up')
+			homeNext.style.transform = 'scale(0)'
 		} else {
 			fullpage_api.setAllowScrolling(false, 'up')
+			homeNext.style.transform = 'none'
 		}
 	},
 })
 
-$(document).on('click', '.home__next', function () {
+$(document).on('click', homeNext, function () {
 	fullpage_api.moveSectionDown()
 })
 
@@ -67,13 +72,14 @@ $(document).on('click', '#contactsLink', function (event) {
 	fullpage_api.moveTo(3, 0)
 })
 
-$('#scrollTopBtn').click(function () {
+scrollTopBtn.click(function () {
 	fullpage_api.moveTo(1, 0)
 })
 
 $('.slider-wrapper').slick({
 	infinite: false,
 	initialSlide: 1,
+	swipe: true,
 	prevArrow: '.who__slider-prev',
 	nextArrow: '.who__slider-next',
 	infinite: true,
@@ -92,7 +98,7 @@ $('.slider-content')
 		prevArrow: '.our__prev',
 		nextArrow: '.our__next',
 		cssEase: 'ease',
-		speed: 450,
+		speed: 550,
 	})
 	.on('wheel', function (event) {
 		event.preventDefault()
