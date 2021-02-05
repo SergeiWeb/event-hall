@@ -16,7 +16,7 @@ const myFullpage = new fullpage('#fullpage', {
 	showActiveTooltip: true,
 	css3: true,
 	navigationTooltips: tooltipArr,
-	afterLoad() {
+	afterLoad(anchorLink, index) {
 		document.querySelector('.who').classList.contains('active')
 			? document.querySelector('#aboutLink').classList.add('active')
 			: document.querySelector('#aboutLink').classList.remove('active')
@@ -24,6 +24,20 @@ const myFullpage = new fullpage('#fullpage', {
 		document.querySelector('.contacts').classList.contains('active')
 			? document.querySelector('#contactsLink').classList.add('active')
 			: document.querySelector('#contactsLink').classList.remove('active')
+
+		console.log(index.index)
+
+		if (index.index == 1) {
+			fullpage_api.setAllowScrolling(false, 'down')
+		} else {
+			fullpage_api.setAllowScrolling(true, 'down')
+		}
+
+		if (index.isLast) {
+			fullpage_api.setAllowScrolling(true, 'up')
+		} else {
+			fullpage_api.setAllowScrolling(false, 'up')
+		}
 	},
 })
 
@@ -65,6 +79,8 @@ $('.slider-wrapper').slick({
 	infinite: true,
 })
 
+let is_allow_scroll = true
+
 $('.slider-content')
 	.slick({
 		vertical: true,
@@ -75,16 +91,52 @@ $('.slider-content')
 		slidesToShow: 1,
 		prevArrow: '.our__prev',
 		nextArrow: '.our__next',
-		cssEase: 'linear',
+		cssEase: 'ease',
+		speed: 450,
+	})
+	.on('wheel', function (event) {
+		event.preventDefault()
+
+		if (is_allow_scroll) {
+			is_allow_scroll = false
+			setTimeout(function () {
+				is_allow_scroll = true
+			}, 500)
+			if (event.originalEvent.deltaY > 0) {
+				$(this).slick('slickNext')
+			} else {
+				$(this).slick('slickPrev')
+			}
+			fullpage_api.setAllowScrolling(false)
+		}
 	})
 	.on('afterChange', function (event, slick, currentSlide, nextSlide) {
 		for (const item of slick.$slides) {
 			if (item.classList.contains('slick-current')) {
-				document.querySelector(
-					'.home__block'
-				).style.backgroundImage = `url('${item.getAttribute('data-bg')}')`
-				console.log(item.getAttribute('data-bg'))
+				document.querySelector('.home__block').style.backgroundImage =
+					`url('${item.getAttribute('data-bg')}')` || 'none'
 			}
+		}
+
+		if (slick.$slides[0].classList.contains('slick-active')) {
+			fullpage_api.setAllowScrolling(true, 'up')
+		}
+
+		if (slick.$slides[1].classList.contains('slick-active')) {
+			fullpage_api.setAllowScrolling(false)
+		}
+
+		if (
+			slick.$slides[slick.$slides.length - 1].classList.contains('slick-active')
+		) {
+			fullpage_api.setAllowScrolling(false, 'up')
+			fullpage_api.setAllowScrolling(true, 'down')
+		}
+	})
+	.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		if (slick.$slides[0].classList.contains('slick-active')) {
+			fullpage_api.setAllowScrolling(true, 'up')
+			fullpage_api.setAllowScrolling(false, 'down')
 		}
 	})
 

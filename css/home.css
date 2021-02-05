@@ -904,16 +904,13 @@ img {
   z-index: 1;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (48%)[2];
-      grid-template-columns: repeat(2, 48%);
+  grid-template-columns: 40% 60%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
 }
 
 .home__logo {
@@ -1348,6 +1345,7 @@ img {
 
 .our__item.slick-current {
   opacity: 1;
+  transform: scale(1) !important;
 }
 
 .our__item.slick-current .home__description {
@@ -1392,6 +1390,8 @@ img {
       -ms-flex-align: center;
           align-items: center;
   height: 60%;
+  transform: scale(0.8);
+  transition: 0.3s;
 }
 
 .our__action {
@@ -2033,10 +2033,6 @@ img {
 }
 
 @media screen and (max-width: 1540px) {
-  .home__content {
-    -ms-grid-columns: (45%)[2];
-        grid-template-columns: repeat(2, 45%);
-  }
   .who__big {
     top: -65px;
   }
