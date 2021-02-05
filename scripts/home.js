@@ -2,7 +2,6 @@ const homeItems = document.querySelectorAll('.home__item')
 const burgerBtn = document.querySelector('#burgerBtn')
 const navbar = document.querySelector('#navbar')
 
-const scrollTopBtn = document.querySelector('#scrollTopBtn')
 const homeNext = document.querySelector('.home__next')
 
 let tooltipArr = []
@@ -72,7 +71,7 @@ $(document).on('click', '#contactsLink', function (event) {
 	fullpage_api.moveTo(3, 0)
 })
 
-scrollTopBtn.click(function () {
+$('#scrollTopBtn').click(function () {
 	fullpage_api.moveTo(1, 0)
 })
 
