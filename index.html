@@ -37,6 +37,29 @@
 		<title>Event Hall</title>
 	</head>
 	<body>
+		<ul class="fp-bullets">
+			<li class="fp-bullets-item bullets-home active">
+				<span class="fp-bullets-dot"></span>
+				<span class="fp-bullets-tooltip">who we are</span>
+			</li>
+			<div class="fp-bullets-slider">
+				<!-- <span class="fp-bullets-dot"></span>
+				<span class="fp-bullets-tooltip">acappella</span> -->
+			</div>
+			<!-- <li class="fp-bullets-item bullets-slide-center">
+				<span class="fp-bullets-dot"></span>
+				<span class="fp-bullets-tooltip">bar u beer</span>
+			</li>
+			<li class="fp-bullets-item bullets-slide-last">
+				<span class="fp-bullets-dot"></span>
+				<span class="fp-bullets-tooltip">kebab</span>
+			</li> -->
+			<li class="fp-bullets-item bullets-contacts">
+				<span class="fp-bullets-dot"></span>
+				<span class="fp-bullets-tooltip">contacts</span>
+			</li>
+		</ul>
+
 		<div class="home home-container">
 			<nav class="home-nav navbar" id="navbar">
 				<div class="navbar__container container">
@@ -52,7 +75,9 @@
 					<div class="navbar__wrapper" id="navMenu">
 						<div class="navbar__links">
 							<a href="#" class="navbar__links-link" id="aboutLink">About Us</a>
-							<a href="#" class="navbar__links-link" id="contactsLink">Contacts</a>
+							<a href="#" class="navbar__links-link" id="contactsLink">
+								Contacts
+							</a>
 						</div>
 						<div class="navbar__social">
 							<a href="#" class="navbar__social-link">
@@ -93,7 +118,6 @@
 				<section
 					class="home__item who"
 					style="background-image: url('./images/homepage/home-bg.png')"
-					data-tooltip="who we are"
 				>
 					<div class="who__content">
 						<div class="who__item container">
@@ -153,7 +177,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="home__item our" data-tooltip="establishments">
+				<section class="home__item our">
 					<div
 						class="home__block"
 						style="background-image: url('./images/homepage/cappella-bg.png')"
@@ -164,6 +188,7 @@
 									class="our__item section-slide our__item-one"
 									id="cappella"
 									data-bg="./images/homepage/cappella-bg.png"
+									data-tooltip="a cappella house"
 								>
 									<div class="container">
 										<div class="home__content">
@@ -185,7 +210,10 @@
 													nostrud exercitation ullamco laboris nisi ut aliquip
 													ex ea commodo consequat.
 												</p>
-												<a href="/acappella.html" class="btn-border description__btn">
+												<a
+													href="/acappella.html"
+													class="btn-border description__btn"
+												>
 													<span class="text">Enter to A Cappella House</span>
 												</a>
 											</div>
@@ -196,6 +224,7 @@
 									class="our__item section-slide our__item-two"
 									id="barubeer"
 									data-bg="./images/homepage/bar-u-beer-bg.png"
+									data-tooltip="bar u beer"
 								>
 									<div class="home__content container">
 										<div class="home__logo">
@@ -216,7 +245,10 @@
 												exercitation ullamco laboris nisi ut aliquip ex ea
 												commodo consequat.
 											</p>
-											<a href="/barbeer.html" class="btn-border description__btn">
+											<a
+												href="/barbeer.html"
+												class="btn-border description__btn"
+											>
 												Enter to Bar u Beer
 											</a>
 										</div>
@@ -226,6 +258,7 @@
 									class="our__item section-slide our__item-three"
 									id="kebab"
 									data-bg="./images/homepage/kebab-bg.png"
+									data-tooltip="kebab house"
 								>
 									<div class="home__content container">
 										<div class="home__logo">
@@ -288,7 +321,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="home__item contacts" data-tooltip="contacts">
+				<section class="home__item contacts">
 					<div class="contacts__item">
 						<div
 							class="contacts__info"
