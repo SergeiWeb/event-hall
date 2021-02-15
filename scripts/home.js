@@ -33,9 +33,7 @@ const sliderContent = $('.slider-content')
 		if (is_allow_scroll) {
 			is_allow_scroll = false
 
-			setTimeout(function () {
-				is_allow_scroll = true
-			}, 500)
+			setTimeout(() => (is_allow_scroll = true), 500)
 
 			if (event.originalEvent.deltaY > 0) {
 				if (
@@ -142,6 +140,7 @@ const sliderContent = $('.slider-content')
 		if (slick.$slides[1].classList.contains('slick-active')) {
 			fullpage_api.setAllowScrolling(false)
 			isScroll = false
+			changeActiveClass('bullets-slide-1')
 		}
 
 		if (
@@ -149,6 +148,7 @@ const sliderContent = $('.slider-content')
 		) {
 			fullpage_api.setAllowScrolling(true, 'down')
 			isScroll = true
+			changeActiveClass('bullets-slide-2')
 		}
 	})
 
@@ -230,17 +230,16 @@ const fpSlider = new fullpage('#fullpage', {
 			? document.querySelector('#contactsLink').classList.add('active')
 			: document.querySelector('#contactsLink').classList.remove('active')
 
+		if (index.isFirst) {
+			changeActiveClass('bullets-home')
+			fullpage_api.setAllowScrolling(true)
+		}
 
 		if ((index.isFirst && isScroll) || (index.index == 0 && isScroll)) {
 			fullpage_api.setAllowScrolling(true)
 			setInterval(() => (isScroll = true), 1500)
 
 			changeActiveClass('bullets-home')
-		}
-
-		if (index.isFirst) {
-			changeActiveClass('bullets-home')
-			fullpage_api.setAllowScrolling(true)
 		}
 
 		if (index.index == 1 || !isScroll) {
@@ -252,6 +251,10 @@ const fpSlider = new fullpage('#fullpage', {
 				sliderContent[0].slick.$slides[0].classList.contains('slick-active')
 			) {
 				changeActiveClass('bullets-slide-0')
+			} else if (
+				sliderContent[0].slick.$slides[1].classList.contains('slick-active')
+			) {
+				changeActiveClass('bullets-slide-1')
 			} else if (
 				sliderContent[0].slick.$slides[
 					sliderContent[0].slick.$slides.length - 1
@@ -277,7 +280,12 @@ const fpSlider = new fullpage('#fullpage', {
 		}
 	},
 	onLeave(index, nextIndex, direction) {
-		if (nextIndex.isFirst && nextIndex.index == 0 && isScroll) {
+		if (nextIndex.isFirst) {
+			changeActiveClass('bullets-home')
+			fullpage_api.setAllowScrolling(true)
+		}
+
+		if (nextIndex.isFirst || (nextIndex.index == 0 && isScroll)) {
 			fullpage_api.setAllowScrolling(true)
 			isScroll = true
 		}
@@ -291,7 +299,7 @@ const fpSlider = new fullpage('#fullpage', {
 			isScroll = true
 		}
 
-		if (nextIndex.isLast && nextIndex.index == 2 && isScroll) {
+		if (nextIndex.isLast || (nextIndex.index == 2 && isScroll)) {
 			isScroll = true
 			fullpage_api.setAllowScrolling(true, 'up')
 			homeNext.style.transform = 'scale(0)'
