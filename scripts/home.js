@@ -8,171 +8,27 @@ let is_allow_scroll = true
 let isScroll = true
 let isTrue = true
 
-const sliderContent = $('.slider-content')
-	.slick({
-		vertical: true,
-		verticalSwiping: true,
-		infinite: false,
-		draggable: false,
-		swipe: true,
-		dots: true,
-		appendDots: $('.fp-bullets-slider'),
-		customPaging: function (slider, i) {
-			const dataTooltip = $(slider.$slides[i]).data('tooltip')
-			return `
+const sliderContent = $('.slider-content').slick({
+	vertical: true,
+	verticalSwiping: true,
+	infinite: false,
+	draggable: false,
+	swipe: true,
+	dots: true,
+	appendDots: $('.fp-bullets-slider'),
+	customPaging: function (slider, i) {
+		const dataTooltip = $(slider.$slides[i]).data('tooltip')
+		return `
 				<span class="fp-bullets-dot"></span>
 				<span class="fp-bullets-tooltip">${dataTooltip}</span>
 			`
-		},
-		slidesToShow: 1,
-		prevArrow: '.our__prev',
-		nextArrow: '.our__next',
-		cssEase: 'ease',
-		speed: 500,
-	})
-	.on('wheel', function (event) {
-		if (is_allow_scroll) {
-			is_allow_scroll = false
-
-			setTimeout(() => (is_allow_scroll = true), 500)
-
-			if (event.originalEvent.deltaY > 0) {
-				if (
-					!(
-						$(this).slick('slickCurrentSlide') ==
-						$(this).find('.section-slide').length - 1
-					)
-				) {
-					event.preventDefault()
-					$(this).slick('slickNext')
-				} else {
-					fullpage_api.setAllowScrolling(true, 'down')
-					isScroll = true
-					return
-				}
-
-				if ($(this).slick('slickCurrentSlide') == 0 && !isTrue) {
-					changeActiveClass('bullets-slide-0')
-				}
-
-				console.log(isScroll)
-
-				if ($(this).slick('slickCurrentSlide') == 0 && !isScroll) {
-					fullpage_api.setAllowScrolling(true, 'up')
-					changeActiveClass('bullets-slide-0')
-				}
-
-				if ($(this).slick('slickCurrentSlide') == 1) {
-					changeActiveClass('bullets-slide-1')
-				}
-
-				if (
-					$(this).slick('slickCurrentSlide') ==
-					$(this).find('.section-slide').length - 1
-				) {
-					changeActiveClass('bullets-slide-2')
-				}
-			} else {
-				console.log($(this).slick('slickCurrentSlide'))
-
-				if ($(this).slick('slickCurrentSlide') == 0 && !isTrue) {
-					changeActiveClass('bullets-slide-0')
-				}
-
-				console.log(isScroll)
-
-				if ($(this).slick('slickCurrentSlide') == 0 && isScroll) {
-					fullpage_api.setAllowScrolling(true, 'up')
-					changeActiveClass('bullets-slide-0')
-					return
-				}
-
-				if ($(this).slick('slickCurrentSlide') == 1) {
-					fullpage_api.setAllowScrolling(false)
-
-					changeActiveClass('bullets-slide-1')
-				}
-
-				if (
-					$(this).slick('slickCurrentSlide') ==
-					$(this).find('.section-slide').length - 1
-				) {
-					changeActiveClass('bullets-slide-2')
-				}
-
-				event.preventDefault()
-				$(this).slick('slickPrev')
-			}
-		}
-	})
-	.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-		for (const item of slick.$slides) {
-			if (item.classList.contains('slick-current')) {
-				document.querySelector('.home__block').style.backgroundImage =
-					`url('${item.getAttribute('data-bg')}')` || '#313643'
-			}
-		}
-
-		if (slick.$slides[0].classList.contains('slick-active') && !isTrue) {
-			changeActiveClass('bullets-slide-0')
-		}
-
-		if (slick.$slides[0].classList.contains('slick-active') && !isScroll) {
-			fullpage_api.setAllowScrolling(true, 'up')
-			isScroll = true
-
-			changeActiveClass('bullets-slide-0')
-		}
-
-		if (slick.$slides[1].classList.contains('slick-active')) {
-			fullpage_api.setAllowScrolling(false)
-			isScroll = false
-
-			changeActiveClass('bullets-slide-1')
-		}
-
-		if (
-			slick.$slides[slick.$slides.length - 1].classList.contains('slick-active')
-		) {
-			fullpage_api.setAllowScrolling(true, 'down')
-			isScroll = true
-
-			changeActiveClass('bullets-slide-2')
-		}
-	})
-	.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-		for (const item of slick.$slides) {
-			if (item.classList.contains('slick-current')) {
-				document.querySelector('.home__block').style.backgroundImage =
-					`url('${item.getAttribute('data-bg')}')` || '#313643'
-			}
-		}
-
-		if (slick.$slides[0].classList.contains('slick-active') && !isTrue) {
-			changeActiveClass('bullets-slide-0')
-		}
-
-		if (slick.$slides[0].classList.contains('slick-active') && !isScroll) {
-			fullpage_api.setAllowScrolling(true, 'up')
-			isScroll = true
-
-			changeActiveClass('bullets-slide-0')
-		}
-
-		if (slick.$slides[1].classList.contains('slick-active')) {
-			fullpage_api.setAllowScrolling(false)
-			isScroll = false
-			changeActiveClass('bullets-slide-1')
-		}
-
-		if (
-			slick.$slides[slick.$slides.length - 1].classList.contains('slick-active')
-		) {
-			fullpage_api.setAllowScrolling(true, 'down')
-			isScroll = true
-			changeActiveClass('bullets-slide-2')
-		}
-	})
+	},
+	slidesToShow: 1,
+	prevArrow: '.our__prev',
+	nextArrow: '.our__next',
+	cssEase: 'ease',
+	speed: 500,
+})
 
 $('.fp-bullets-slider .slick-dots li').addClass('fp-bullets-item')
 
@@ -252,6 +108,10 @@ const fpSlider = new fullpage('#fullpage', {
 			? document.querySelector('#contactsLink').classList.add('active')
 			: document.querySelector('#contactsLink').classList.remove('active')
 
+		if (index.isFirst) {
+			changeActiveClass('bullets-home')
+		}
+
 		if (index.isFirst && isScroll && isTrue) {
 			changeActiveClass('bullets-home')
 			fullpage_api.setAllowScrolling(true)
@@ -303,6 +163,10 @@ const fpSlider = new fullpage('#fullpage', {
 		}
 	},
 	onLeave(index, nextIndex, direction) {
+		if (nextIndex.isFirst) {
+			changeActiveClass('bullets-home')
+		}
+
 		if (nextIndex.isFirst && isScroll) {
 			changeActiveClass('bullets-home')
 			fullpage_api.setAllowScrolling(true)
@@ -333,7 +197,163 @@ const fpSlider = new fullpage('#fullpage', {
 	},
 })
 
-// console.log(fullpage_api.getActiveSection())
+sliderContent
+	.on('wheel', function (event) {
+		if (is_allow_scroll) {
+			is_allow_scroll = false
+
+			setTimeout(() => (is_allow_scroll = true), 500)
+
+			if (event.originalEvent.deltaY > 0) {
+				if (
+					!(
+						$(this).slick('slickCurrentSlide') ==
+						$(this).find('.section-slide').length - 1
+					)
+				) {
+					event.preventDefault()
+					$(this).slick('slickNext')
+				} else {
+					fullpage_api.setAllowScrolling(true, 'down')
+					isScroll = true
+					return
+				}
+
+				if (
+					$(this).slick('slickCurrentSlide') == 0 &&
+					!fullpage_api.getActiveSection().isFirst
+				) {
+					changeActiveClass('bullets-slide-0')
+				}
+
+				if ($(this).slick('slickCurrentSlide') == 0 && !isScroll) {
+					fullpage_api.setAllowScrolling(true, 'up')
+					changeActiveClass('bullets-slide-0')
+				}
+
+				if ($(this).slick('slickCurrentSlide') == 1) {
+					changeActiveClass('bullets-slide-1')
+				}
+
+				if (
+					$(this).slick('slickCurrentSlide') ==
+					$(this).find('.section-slide').length - 1
+				) {
+					changeActiveClass('bullets-slide-2')
+				}
+			} else {
+				console.log($(this).slick('slickCurrentSlide'))
+
+				if (
+					$(this).slick('slickCurrentSlide') == 0 &&
+					!fullpage_api.getActiveSection().isFirst
+				) {
+					changeActiveClass('bullets-slide-0')
+				}
+
+				if ($(this).slick('slickCurrentSlide') == 0 && isScroll) {
+					fullpage_api.setAllowScrolling(true, 'up')
+					return
+				}
+
+				if ($(this).slick('slickCurrentSlide') == 1) {
+					fullpage_api.setAllowScrolling(false)
+
+					changeActiveClass('bullets-slide-1')
+				}
+
+				if (
+					$(this).slick('slickCurrentSlide') ==
+					$(this).find('.section-slide').length - 1
+				) {
+					changeActiveClass('bullets-slide-2')
+				}
+
+				event.preventDefault()
+				$(this).slick('slickPrev')
+			}
+		}
+	})
+	.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+		for (const item of slick.$slides) {
+			if (item.classList.contains('slick-current')) {
+				document.querySelector('.home__block').style.backgroundImage =
+					`url('${item.getAttribute('data-bg')}')` || '#313643'
+			}
+		}
+
+		if (
+			slick.$slides[0].classList.contains('slick-active') &&
+			!isTrue &&
+			!fullpage_api.getActiveSection().isFirst
+		) {
+			changeActiveClass('bullets-slide-0')
+		}
+
+		if (slick.$slides[0].classList.contains('slick-active') && !isScroll) {
+			fullpage_api.setAllowScrolling(true, 'up')
+			isScroll = true
+
+			changeActiveClass('bullets-slide-0')
+		}
+
+		if (slick.$slides[1].classList.contains('slick-active')) {
+			fullpage_api.setAllowScrolling(false)
+			isScroll = false
+
+			changeActiveClass('bullets-slide-1')
+		}
+
+		if (
+			slick.$slides[slick.$slides.length - 1].classList.contains('slick-active')
+		) {
+			fullpage_api.setAllowScrolling(true, 'down')
+			isScroll = true
+
+			changeActiveClass('bullets-slide-2')
+		}
+	})
+	.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		for (const item of slick.$slides) {
+			if (item.classList.contains('slick-current')) {
+				document.querySelector('.home__block').style.backgroundImage =
+					`url('${item.getAttribute('data-bg')}')` || '#313643'
+			}
+		}
+
+		if (
+			slick.$slides[0].classList.contains('slick-active') &&
+			!isTrue &&
+			fullpage_api.getActiveSection().isFirst
+		) {
+			changeActiveClass('bullets-slide-0')
+		}
+
+		if (slick.$slides[0].classList.contains('slick-active') && !isScroll) {
+			fullpage_api.setAllowScrolling(true, 'up')
+			isScroll = true
+
+			changeActiveClass('bullets-slide-0')
+		}
+
+		if (slick.$slides[1].classList.contains('slick-active')) {
+			fullpage_api.setAllowScrolling(false)
+			isScroll = false
+			changeActiveClass('bullets-slide-1')
+		}
+
+		if (
+			slick.$slides[slick.$slides.length - 1].classList.contains('slick-active')
+		) {
+			fullpage_api.setAllowScrolling(true, 'down')
+			isScroll = true
+			changeActiveClass('bullets-slide-2')
+		}
+	})
+
+console.log(fpSlider)
+
+// console.log(fullpage_api.getActiveSection().isFirst)
 // console.log(fullpage_api.getActiveSlide())
 
 $(document).on('click', '.home__next', function () {
